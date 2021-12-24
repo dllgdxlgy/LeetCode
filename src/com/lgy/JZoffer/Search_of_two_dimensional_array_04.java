@@ -15,16 +15,18 @@ public class Search_of_two_dimensional_array_04 {
      */
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
 
+        // 1. 先判断矩阵的情况是不是直接就可以退出（为空、行为0、列为0）
         if (matrix.length==0 || matrix==null||matrix[0].length==0){
             return false;
         }
-        //行
-        int row_number =matrix.length;
+        // 2. 获取矩阵行
+        int row_number = matrix.length;
         int row=0;
-        //列
+        // 3. 获取矩阵列
         int column_number = matrix[0].length;
-        int column=column_number-1;
-       while (row<row_number && column>=0){
+        int column = column_number-1;
+        // 4. 循环条件
+       while (row < row_number && column >= 0){
            if (matrix[row][column]==target){
                return true;
 
