@@ -13,9 +13,9 @@ public class Binary_search_tree_and_bidirectional_linked_list_36 {
 
         if (root == null)return null;
         dfs(root);
-        head.right = pre;
+        head.left = pre;
         pre.right = head;
-        return null;
+        return head;
     }
     public void dfs(Node cur){
         if (cur == null){
@@ -27,6 +27,7 @@ public class Binary_search_tree_and_bidirectional_linked_list_36 {
         }else {
             head = cur;
         }
+        cur.left = pre;
         pre = cur;
         dfs(cur.right);
     }
