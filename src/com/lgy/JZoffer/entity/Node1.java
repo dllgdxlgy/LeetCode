@@ -6,9 +6,9 @@ package com.lgy.JZoffer.entity;
  */
 public class Node1 {
 
-    int val;
-    Node next;
-    Node random;
+    public int val;
+    public Node1 next;
+    public Node1 random;
 
     public Node1(int val) {
         this.val = val;
