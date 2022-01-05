@@ -8,7 +8,13 @@ package com.lgy.JZoffer;
  */
 public class Minimum_number_of_K_40 {
 
-    public int[] getLeastNumbers(int[] arr, int k) {
+    /**
+     *
+     * @param arr
+     * @param k
+     * @return
+     */
+    public int[] getLeastNumbers1(int[] arr, int k) {
 
         int tem;
         int[] res = new int[k];
@@ -26,5 +32,15 @@ public class Minimum_number_of_K_40 {
         }
 
         return res;
+    }
+
+    /**
+     * 快速排序算法
+     */
+
+    public int[] getLeastNumbers(int[] arr, int k) {
+
+
+        return null;
     }
 }
