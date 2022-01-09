@@ -63,14 +63,26 @@ public class Numbers_that_appear_more_than_half_the_times_in_the_array_39 {
     public static void main(String[] args) {
         Numbers_that_appear_more_than_half_the_times_in_the_array_39 n = new Numbers_that_appear_more_than_half_the_times_in_the_array_39();
 
+        /**
+         * 测试快速排序的方法
+         */
+//
+//        int[] arr = {5, 1, 7, 3, 1, 6, 9, 4};
+//
+//        n.quickSort(arr, 0, arr.length - 1);
+//
+//        for (int i : arr) {
+//            System.out.print(i + "\t");
+//        }
 
-        int[] arr = {5, 1, 7, 3, 1, 6, 9, 4};
+        /**
+         * 测试HashMap
+         */
+        int[] arr = {5, 1, 1, 3, 1, 2, 1, 1};
+        int res = n.majorityElement(arr);
+        System.out.println(res);
 
-        n.quickSort(arr, 0, arr.length - 1);
 
-        for (int i : arr) {
-            System.out.print(i + "\t");
-        }
     }
 
     /**
