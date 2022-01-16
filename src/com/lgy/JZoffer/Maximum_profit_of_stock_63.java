@@ -23,8 +23,14 @@ public class Maximum_profit_of_stock_63 {
         return res;
     }
 
+    /**
+     *
+     * @param prices
+     * @return
+     */
     public int maxProfit_1(int[] prices) {
 
+        
 
         return 0;
     }
