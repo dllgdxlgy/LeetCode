@@ -34,7 +34,7 @@ public class Triangle_minimum_path_sum_120 {
 //
 //        int leftSum = traverse(i + 1, j) + lists.get(i + 1).get(j);
 //        int rightSum = traverse(i + 1, j + 1) + lists.get(i + 1).get(j + 1);
-//        return Math.max(leftSum, rightSum);
+//        return Math.min(leftSum, rightSum);
 //    }
 
 
