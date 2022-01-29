@@ -9,7 +9,17 @@ package com.lgy.JZoffer;
 public class Maximum_sum_of_consecutive_subarrays_42 {
 
     public int maxSubArray(int[] nums) {
+        int res =  nums[0] ;
+        if (nums.length ==1){
+            return nums[0];
+        }
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i-1] > 0){
+                nums[i] += nums[i-1];
 
-        return 0;
+            }
+            res = Math.max(res,nums[i]);
+        }
+        return res;
     }
 }
