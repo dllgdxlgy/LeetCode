@@ -19,31 +19,32 @@ public class Distribute_candy_135 {
         }
         //创建一个数组
         int[] arr = new int[ratings.length];
+        int[] arr2 = new int[ratings.length];
 
         //赋值为1
         for (int i = 0; i < ratings.length; i++) {
             arr[i] = 1;
+            arr2[i] =1;
         }
 
-        int i =0;
-        while ( i < ratings.length - 1) {
-            if (ratings[i] > ratings[i + 1])
-                arr[i] = arr[i+1]+1;
+        int i =1;
+        while ( i < ratings.length) {
+            if (ratings[i] > ratings[i - 1])
+                arr[i] = arr[i-1]+1;
             ++i;
         }
-        int j = ratings.length - 1;
-        while (j >= 1) {
-            if (ratings[j] > ratings[j - 1])
-                arr[j] = arr[j-1]+1;
+
+        int count = arr[ratings.length-1];
+        int j = ratings.length - 2;
+        while (j >= 0) {
+            if (ratings[j] > ratings[j +1]) {
+                arr[j] = arr[j + 1] + 1;
+                count += Math.max(arr[i],arr2[i]);
+            }
             --j;
         }
 
-        int res = 0;
-        for (int w = 0; w <arr.length; w++){
-            res +=arr[w];
-        }
-
-        return res;
+        return count;
     }
 
 
