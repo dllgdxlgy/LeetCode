@@ -2,6 +2,10 @@ package com.lgy.leetcode;
 
 import java.util.Arrays;
 
+/**
+ * 下一个最大的元素
+ */
+
 public class Next_larger_element_496 {
 
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
