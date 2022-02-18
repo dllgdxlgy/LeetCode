@@ -19,8 +19,12 @@ public class T17 {
         }
         String[] strings = new String[]{"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         if (digits.length() == 1) {
+
+            // String 转为 Int 类型
             int num = Integer.parseInt(digits);
+            // 对数组进行遍历
             for (char c : strings[num - 2].toCharArray()) {
+                //String.valueOf(c) char 变为 String
                 res.add(String.valueOf(c));
             }
             return res;
@@ -98,5 +102,8 @@ public class T17 {
         System.out.println(b);
         System.out.println(c);
         System.out.println(d);
+
+        // int 变为 String
+        String s = String.valueOf(1);
     }
 }
