@@ -32,13 +32,17 @@ public class T14 {
 //        }
 //        listNode.next = head;
 
+        ListNode pre = new ListNode(0);
+        pre.next = head;
 
-        ListNode listNode =head;
-        ListNode listNode2 = head;
-        for (int i = 0; i < n; i++) {
+
+        ListNode listNode =pre;
+        ListNode listNode2 = pre;
+        while (n!=0){
             listNode = listNode.next;
+            n--;
         }
-        while (listNode != null){
+        while (listNode.next != null){
             listNode = listNode.next;
             listNode2 = listNode2.next;
         }
@@ -47,7 +51,7 @@ public class T14 {
 
 
 
-        return head;
+        return pre.next;
     }
 
 }
