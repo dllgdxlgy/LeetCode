@@ -17,11 +17,31 @@ public class Flip_word_order_58 {
                 i--;
             }
             res.append(s.substring(i+1,j+1)+' ');
+            while (i>0 && s.charAt(i) == ' '){
+                i--;
+            }
+            j = i;
+        }
+        return res.toString().trim();
+    }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
+    public String reverseWords_1(String s) {
 
+        String[] res = s.trim().split(" ");
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = res.length-1; i >= 0; i--) {
+            if (res[i].equals("")){
+                continue;
+            }
+            stringBuilder.append(res[i]+" ");
         }
 
-
-        return null;
+        return stringBuilder.toString().trim();
     }
+
 }
