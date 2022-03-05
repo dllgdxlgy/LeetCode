@@ -22,8 +22,23 @@ public class Fibonacci_sequence_10 {
 
     public static void main(String[] args) {
         Fibonacci_sequence_10 fibonacci_sequence_10 = new Fibonacci_sequence_10();
-        int res = fibonacci_sequence_10.fib(0);
+        int res = fibonacci_sequence_10.fib_2(4);
         System.out.println(res);
     }
 
+
+    public int fib_2(int n){
+
+        int a = 0;
+        int b = 1;
+        int sum ;
+
+        for (int i = 0; i < n; i++) {
+            sum = (a+b) % 1000000007;
+            a = b;
+            b = sum;
+        }
+
+        return a;
+    }
 }
