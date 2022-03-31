@@ -8,6 +8,9 @@ package com.lgy.Design_mode.Singleton;
  */
 public class Singleton_06 {
 
+
+    //https://juejin.cn/post/6844903772892692487
+
     private static volatile Singleton_06 INSTANCE;
 
     private Singleton_06(){};
