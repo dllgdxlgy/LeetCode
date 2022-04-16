@@ -56,4 +56,25 @@ public class T141 {
         return true;
 
     }
+
+    /**
+     * 第二遍
+     */
+
+    public boolean hasCycle_2(ListNode head) {
+
+        if (head == null && head.next == null){
+            return false;
+        }
+        ListNode node = head;
+        ListNode node1 = head.next;
+        while (node != node1){
+            if (node == null || node1 == null){
+                return false;
+            }
+            node = node.next;
+            node1 = node1.next.next;
+        }
+        return true;
+    }
 }
