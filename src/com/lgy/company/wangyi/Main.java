@@ -1,16 +1,14 @@
 package com.lgy.company.wangyi;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 /**
  * @author LGY
- * @create 2022-04-16 11:02
+ * @create 2022-04-16 14:58
  */
-public class T2_2021 {
-
+public class Main {
         static List<List<Integer>> res = new LinkedList<>();
         static LinkedList<Integer> array = new LinkedList<>();
         public static void main(String[] args) {
@@ -44,5 +42,5 @@ public class T2_2021 {
             }
         }
 
-    }
 
+}
