@@ -5,6 +5,7 @@ package com.lgy.leetcode;
  * @create 2022-04-22 21:36
  */
 public class T105 {
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
 
         return build(preorder,0,preorder.length-1,inorder,0,inorder.length-1);
