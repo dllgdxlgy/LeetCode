@@ -22,6 +22,17 @@ public class T78 {
         }
     }
 
+    /**
+     * []
+     * [1]
+     * [1, 2]
+     * [1, 2, 3]
+     * [1, 3]
+     * [2]
+     * [2, 3]
+     * [3]
+     * @param args
+     */
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,3};
         T78 t78 = new T78();

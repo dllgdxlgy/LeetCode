@@ -9,7 +9,7 @@ public class T46 {
     public List<List<Integer>> permute(int[] nums) {
         // 记录路径
         LinkedList<Integer> track = new LinkedList<>();
-        // 已经使用的标记为 true，避免重复使用。
+        // 已经使用的标记为 true，避免重复使用。初始化全为false
         boolean[] used = new boolean[nums.length];
         backtrack(nums,track,used);
         return res;
@@ -32,6 +32,13 @@ public class T46 {
             used[i] = false;
         }
 
+    }
+
+    public static void main(String[] args) {
+        T46 t46 = new T46();
+        int[] num = new int[]{1,2,3};
+        t46.permute(num);
+        System.out.println(1);
     }
 
 }
