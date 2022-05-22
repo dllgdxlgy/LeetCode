@@ -43,46 +43,77 @@ public class T46 {
 
 
     // 创建链表
-    List<List<Integer>> lists = new LinkedList<>();
-
-    public List<List<Integer>> permute(int[] nums) {
-
-        LinkedList<Integer> list = new LinkedList<>();
-        boolean[] used = new boolean[nums.length];
-        dfs(nums,list,used);
-
-        return lists;
-    }
-
-    /**
-     * 树的深度遍历
-     * @param nums
-     * @param list
-     * @param used
-     */
-    public void dfs (int[] nums, LinkedList<Integer> list, boolean[] used){
-
-        if (list.size() == nums.length){
-            lists.add(new LinkedList<>(list));
-            return;
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if (used[i]){
-                continue;
-            }
-            list.add(nums[i]);
-            used[i] = true;
-            dfs(nums,list,used);
-            list.removeLast();
-            used[i] = false;
-        }
-    }
+//    List<List<Integer>> lists = new LinkedList<>();
+//
+//    public List<List<Integer>> permute(int[] nums) {
+//
+//        LinkedList<Integer> list = new LinkedList<>();
+//        boolean[] used = new boolean[nums.length];
+//        dfs(nums,list,used);
+//
+//        return lists;
+//    }
+//
+//    /**
+//     * 树的深度遍历
+//     * @param nums
+//     * @param list
+//     * @param used
+//     */
+//    public void dfs (int[] nums, LinkedList<Integer> list, boolean[] used){
+//
+//        if (list.size() == nums.length){
+//            lists.add(new LinkedList<>(list));
+//            return;
+//        }
+//        for (int i = 0; i < nums.length; i++) {
+//            if (used[i]){
+//                continue;
+//            }
+//            list.add(nums[i]);
+//            used[i] = true;
+//            dfs(nums,list,used);
+//            list.removeLast();
+//            used[i] = false;
+//        }
+//    }
 
     public static void main(String[] args) {
         T46 t46 = new T46();
         int[] num = new int[]{1,2,3};
         t46.permute(num);
         System.out.println(1);
+    }
+
+
+    List<List<Integer>> lists = new LinkedList<>();
+    LinkedList<Integer> list = new LinkedList<>();
+
+
+    public List<List<Integer>> permute(int[] nums) {
+
+        boolean[] isuse = new boolean[nums.length];
+
+        dfs(nums,isuse);
+
+        return lists;
+    }
+    public void dfs(int[] nums, boolean[] isuse){
+        if (list.size() == nums.length){
+            lists.add(new LinkedList<>(list));
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (isuse[i]){
+                continue;
+            }
+            list.add(nums[i]);
+            isuse[i] = true;
+
+            dfs(nums,isuse);
+
+            list.removeLast();
+            isuse[i] = false;
+        }
     }
 
 
