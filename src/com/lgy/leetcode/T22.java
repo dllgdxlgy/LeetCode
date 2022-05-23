@@ -37,4 +37,10 @@ public class T22 {
         }
     }
 
+    public static void main(String[] args) {
+        T22 t22 = new T22();
+        t22.generateParenthesis(2);
+
+    }
+
 }
