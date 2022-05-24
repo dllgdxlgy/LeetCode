@@ -12,10 +12,40 @@ public class T53 {
 
         int res = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == target){
+            if (nums[i] == target) {
                 res++;
             }
         }
         return res;
+    }
+
+    public int search_1(int[] nums, int target) {
+
+        Arrays.sort(nums);
+
+        int left = 0;
+        int right = nums.length-1;
+
+        while (left <= right){
+
+            int mid = (left + right)/2;
+
+            if (nums[mid] > target){
+                right = mid-1;
+            }else if(nums[mid]<target){
+                left = mid+1;
+            }else {
+                if (nums[right] != target){
+                    right--;
+                }else if (nums[left]!=target){
+                    left++;
+                }else {
+                    break;
+                }
+
+            }
+
+        }
+        return right-left+1;
     }
 }
