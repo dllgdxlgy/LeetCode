@@ -58,7 +58,24 @@ public class Replace_spaces_5 {
     public static void main(String[] args) {
         Replace_spaces_5 r = new Replace_spaces_5();
         String s = "jiahf f f";
-        StringBuilder builder = new StringBuilder(s);
-        System.out.println(builder);
+//        StringBuilder builder = new StringBuilder(s);
+//        System.out.println(builder);
+        String s1 = r.replaceSpace(s);
+    }
+
+    public String replaceSpace (String s) {
+        // write code here
+        char[] sh = s.toCharArray();
+        StringBuilder str = new StringBuilder();
+        for(char c : sh){
+            if(c == ' '){
+                str.append("%20");
+            }else{
+                str.append(c);
+            }
+        }
+        System.out.println(str);
+        String s1 = String.valueOf(str);
+        return s1;
     }
 }
