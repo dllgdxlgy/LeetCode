@@ -2,6 +2,7 @@ package com.lgy.JZoffer;
 
 import com.lgy.JZoffer.entity.ListNode;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -47,7 +48,7 @@ public class Print_linked_list_from_beginning_to_end_06 {
     public int[] reversePrint2(ListNode head) {
 
         // 1. 创建一个 ListNode 栈
-        Stack<ListNode> stack = new Stack<ListNode>();
+        Stack<ListNode> stack = new Stack<>();
         // 2. 创建一个指向相同的链表listnode
         ListNode listNode = head;
         while (listNode!=null){
@@ -66,9 +67,29 @@ public class Print_linked_list_from_beginning_to_end_06 {
         }
         // 7. 返回数组
         return arr;
+    }
 
+    /**
+     *  二刷
+     * @param listNode
+     * @return
+     */
+    public ArrayList<Integer> printListFromTailToHead_3(ListNode listNode) {
 
+        ArrayList<Integer> res = new ArrayList<>();
+        ArrayList<Integer> temp = new ArrayList<>();
+        if(listNode == null ){
+            return res;
+        }
+        if(listNode != null){
+            temp.add(listNode.val);
+            listNode = listNode.next;
+        }
+        Integer[] arr = temp.toArray(new Integer[temp.size()]);
+        for(int j = arr.length-1 ; j >= 0; j--){
+            res.add(arr[j]);
+        }
 
-
+        return res;
     }
 }
