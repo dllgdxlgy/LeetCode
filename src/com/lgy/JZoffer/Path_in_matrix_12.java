@@ -43,11 +43,14 @@ public class Path_in_matrix_12 {
                 dfs(board, i-1 ,j,words,k+1)||
                 dfs(board, i ,j-1,words,k+1)||
                 dfs(board, i ,j+1,words,k+1);
-
-
         board[i][j] =tmp;
         return res;
     }
 
+    public static void main(String[] args) {
+        String s = "abufghrigj";
+        char c = s.charAt(0);
+        System.out.println(c);
+    }
 
 }
