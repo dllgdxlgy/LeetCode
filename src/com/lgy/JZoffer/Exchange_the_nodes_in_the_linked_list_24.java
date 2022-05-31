@@ -3,6 +3,8 @@ package com.lgy.JZoffer;
 import com.lgy.JZoffer.entity.ListNode;
 
 import java.nio.file.Watchable;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Exchange_the_nodes_in_the_linked_list_24 {
     public ListNode swapPairs(ListNode head) {
@@ -78,6 +80,10 @@ public class Exchange_the_nodes_in_the_linked_list_24 {
             temp = temp.next;
             i++;
         }
+
         return temp;
     }
+
+
+
 }
