@@ -46,4 +46,29 @@ public class Adjust_the_array_order_so_that_odd_numbers_precede_even_numbers_21 
 
     }
 
+
+    /**
+     * 二刷 牛客网
+     * 牛客网和Leetcode 的题目不一样
+     */
+    public int[] exchange (int[] array) {
+        // write code here
+        int len = array.length;
+        int[] arr = new int[len];
+        int index = 0;
+        for(int i = 0; i < len;i++){
+            if((array[i] % 2) == 1){
+                arr[index] = array[i];
+                index++;
+            }
+        }
+        for(int j= 0; j<len;j++){
+            if((array[j] % 2) == 0){
+                arr[index] = array[j];
+                index++;
+            }
+        }
+        return arr;
+    }
+
 }
