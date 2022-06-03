@@ -1,5 +1,6 @@
 package com.lgy.JZoffer;
 
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -43,6 +44,11 @@ public class Stack_containing_min_function_30 {
 
         return B.peek();
     }
+
+
+
+
+
 
 }
 
