@@ -7,6 +7,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
+ * 12.  删除有序链表中重复的元素-I
+ *
+ https://www.nowcoder.com/practice/c087914fae
+ 584da886a0091e877f2c79?tpId=188&&tqId=38342&rp=
+ 1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
+ *
  * @author LGY
  * @create 2022-06-05 21:27
  */

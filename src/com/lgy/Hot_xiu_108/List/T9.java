@@ -3,6 +3,11 @@ package com.lgy.Hot_xiu_108.List;
 import com.lgy.JZoffer.entity.ListNode;
 
 /**
+ * 9. 删除有序链表中重复的元素-II
+ *
+ https://www.nowcoder.com/practice/71cef9f8b
+ 5564579bf7ed93fbe0b2024?tpId=188&&tqId=38353&rp
+ =1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
  * @author LGY
  * @create 2022-06-05 19:21
  */
