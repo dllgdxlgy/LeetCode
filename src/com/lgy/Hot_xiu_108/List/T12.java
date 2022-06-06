@@ -2,10 +2,6 @@ package com.lgy.Hot_xiu_108.List;
 
 import com.lgy.JZoffer.entity.ListNode;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-
 /**
  * 12.  删除有序链表中重复的元素-I
  *
