@@ -10,6 +10,40 @@ package com.lgy.Hot_xiu_108.Array;
 public class T10 {
 
 
+    /**
+     * 参考答案的位置
+     * https://leetcode.cn/problems/first-missing-positive/solution/tong-pai-xu-python-dai-ma-by-liweiwei1419/
+     * @param nums
+     * @return
+     */
+    public int minNumberDisappeared (int[] nums) {
+        // write code here
+
+        //获取数组的长度
+        int len = nums.length;
+
+        for(int i = 0; i < len; i++ ){
+            // 注意这块：nums[nums[i]-1] != nums[i]
+            while(nums[i] >= 1 && nums[i] <= len && nums[nums[i]-1] != nums[i] ){
+                swap(nums,i,nums[i]-1);
+            }
+        }
+
+        for(int i = 0; i< len;i++){
+            if(nums[i] != i+1){
+                return i+1;
+            }
+        }
+        return len+1;
+    }
+
+    public void swap(int[] nums,int index1,int index2){
+        int temp = nums[index1];
+        nums[index1] = nums[index2];
+        nums[index2] = temp;
+
+    }
+
 
 
 }
