@@ -30,4 +30,63 @@ public class T16 {
         }
         return count;
     }
+
+
+    // 方法二：推荐的方法
+
+    int count = 0;
+    public int reversePairs(int[] nums){
+        merge(nums,0,nums.length-1);
+        return count;
+    }
+
+    public void merge(int[] nums,int left,int right){
+
+        int mid = left + ((right - left)>>1);
+
+        if (left < right){
+            merge(nums,left,mid);
+            merge(nums,mid+1,right);
+
+            mersort(nums,left,mid,right);
+        }
+    }
+
+    public void mersort(int[] nums,int left,int mid, int right){
+        int[] temparr = new int[right-left+1];
+
+        int index = 0;
+        int temp1 = left;
+        int temp2 = mid + 1;
+
+        while (temp1 <= mid && temp2 <= right){
+            if(nums[temp1] <= nums[temp2]){
+                temparr[index] = nums[temp1];
+                index++;
+                temp1++;
+            }else {
+                count += (mid - temp1 + 1);
+                count = count % 1000000007;
+                temparr[index] = nums[temp2];
+                index++;
+                temp2++;
+            }
+        }
+
+        while (temp1 <= mid ){
+            temparr[index] = nums[temp1];
+            index++;
+            temp1++;
+        }
+
+        while (temp2 <= right ){
+            temparr[index] = nums[temp2];
+            index++;
+            temp2++;
+        }
+
+        for (int k = 0; k < temparr.length; k++){
+            nums[k+left] = temparr[k];
+        }
+    }
 }
