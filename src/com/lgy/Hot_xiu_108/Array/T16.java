@@ -1,7 +1,11 @@
 package com.lgy.Hot_xiu_108.Array;
 
 /**
+ * 16. 数组中的逆序对
  *
+ https://www.nowcoder.com//practice/96bd6684e04a44eb
+ 80e6a68efc0ec6c5?tpId=190&&tqId=35588&rp=1&ru=/act
+ ivity/oj&qru=/ta/job-code-high-rd/question-ranking
  * @author LGY
  * @create 2022-06-10 11:38
  */
