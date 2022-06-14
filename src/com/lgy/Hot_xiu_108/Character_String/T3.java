@@ -1,5 +1,7 @@
 package com.lgy.Hot_xiu_108.Character_String;
 
+import java.util.Arrays;
+
 /**
  * 3. 最长回文子串
  *
@@ -48,5 +50,20 @@ public class T3 {
             res=0;
         }
         return max;
+    }
+
+
+    /**
+     * 测试数组填充方法 Arrays.sort();
+     * @param args
+     */
+    public static void main(String[] args) {
+        int[][] arr = new int[2][2];
+        Arrays.fill(arr[0],1);
+        System.out.println(arr);
+
+        String s = "abcfrdes";
+        String substring = s.substring(0, 4);
+        System.out.println(substring);
     }
 }
