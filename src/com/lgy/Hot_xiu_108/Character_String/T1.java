@@ -15,6 +15,12 @@ import java.util.HashSet;
 public class T1 {
 
 
+    /**
+     * 滑动窗口
+     *
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring(String s) {
 
         if (s.equals("")){
