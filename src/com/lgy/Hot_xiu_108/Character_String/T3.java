@@ -54,6 +54,38 @@ public class T3 {
 
 
     /**
+     * 动态规划，自己不会，看的题解
+     https://www.nowcoder.com/practice/b4525d1d84934cf280439aeecc36f4af?tpId=188&&tqId=38
+     292&rp=1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
+     * @param A
+     * @return
+     */
+    public int getLongestPalindrome_1 (String A) {
+        // write code here
+        char[] a = A.toCharArray();
+        int n = a.length;
+        int[][] dp = new int[n][n];
+        int max = 1;
+        for(int i = 0; i < n; i++){
+            dp[i][i] = 1;
+        }
+        for(int len = 2; len<=n; ++len){
+            for(int i = 0; i <= n-len; i++ ){
+                int j = i + len -1;
+                if(len == 2 && a[i] == a[j]){
+                    dp[i][j] = len;
+                    max = 2;
+                    continue;
+                }
+                if(a[i] == a[j] && dp[i+1][j-1] != 0){
+                    dp[i][j] = len;
+                    max = len;
+                }
+            }
+        }
+        return max;
+    }
+    /**
      * 测试数组填充方法 Arrays.sort();
      * @param args
      */
