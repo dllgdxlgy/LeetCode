@@ -10,6 +10,11 @@ package com.lgy.Hot_xiu_108.Character_String;
  */
 public class T5 {
 
+    /**
+     * 自己做的
+     * @param str
+     * @return
+     */
     public String solve (String str) {
         // write code here
         char[] str_char = str.toCharArray();
@@ -18,6 +23,24 @@ public class T5 {
 
         for(int i = n-1; i >= 0; i--){
             sb.append(str_char[i]);
+        }
+
+        return sb.toString();
+    }
+
+    /**
+     *
+     * @param str
+     * @return
+     */
+    public String solve_1 (String str) {
+        // write code here
+
+        int n = str.toCharArray().length;
+        StringBuffer sb = new StringBuffer("");
+
+        for(int i = n-1; i >= 0; i--){
+            sb.append(str.charAt(i));
         }
 
         return sb.toString();

@@ -97,5 +97,6 @@ public class T3 {
         String s = "abcfrdes";
         String substring = s.substring(0, 4);
         System.out.println(substring);
+        int n = s.toCharArray().length;
     }
 }
