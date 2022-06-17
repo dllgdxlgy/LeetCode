@@ -6,6 +6,11 @@ package com.lgy.Hot_xiu_108.Character_String;
  */
 public class T9 {
 
+    /**
+     * 自己做出来的
+     * @param strs
+     * @return
+     */
     public String longestCommonPrefix (String[] strs) {
         // write code here
         if(strs.length == 0){

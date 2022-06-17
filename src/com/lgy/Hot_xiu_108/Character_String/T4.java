@@ -1,5 +1,7 @@
 package com.lgy.Hot_xiu_108.Character_String;
 
+import java.util.Arrays;
+
 /**
  * 4. 大数加法
 
@@ -11,4 +13,54 @@ package com.lgy.Hot_xiu_108.Character_String;
 public class T4 {
 
 
+    public String solve (String s, String t) {
+        // write code here
+
+        StringBuilder sb = new StringBuilder();
+        int len_s = s.length();
+        int len_t = t.length();
+        int max = Math.max(len_t,len_s);
+        int len = max+1;
+
+        int[] arr_s = new int[len];
+        int[] arr_t = new int[len];
+
+        int[] res = new int[len];
+
+        for(int i = len_s-1; i >= 0 ; i--){
+            arr_s[--len] = s.charAt(i) - '0';
+        }
+
+        max = Math.max(len_t,len_s);
+        len = max+1;
+
+        for(int i = len_t-1; i >= 0; i--){
+            arr_t[--len] = t.charAt(i) - '0';
+        }
+
+        max = Math.max(len_t,len_s);
+        len = max+1;
+        int num = 0;
+        for(int i = len-1; i >= 0; i--){
+            int temp = arr_s[i] + arr_t[i] + num;
+            res[i] = temp % 10;
+            num = temp/10;
+        }
+        for (int i = 0; i < len; i++) {
+            sb.append(res[i]);
+        }
+        String sb_res = sb.toString();
+        int index = 0;
+        while ( index < len && sb_res.charAt(index) == '0' ){
+            index++;
+        }
+        return index == len?"0":sb_res.substring(index);
+
+    }
+
+    public static void main(String[] args) {
+        T4 t4 = new T4();
+        String solve = t4.solve("0", "0");
+        System.out.println(solve);
+    }
 }
