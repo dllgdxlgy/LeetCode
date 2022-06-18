@@ -19,9 +19,11 @@ public class T3 {
      * @return
      */
     public int getLongestPalindrome (String A) {
-        // write code here
+        // 定义结果，最小为 1
         int res = 1;
+        // 转化为数组
         char[] arr = A.toCharArray();
+        // 获取长度
         int len = arr.length;
         int max = 1;
         for(int i = 0; i < len;i++){
@@ -62,8 +64,12 @@ public class T3 {
      */
     public int getLongestPalindrome_1 (String A) {
         // write code here
+
+        // 获取的数组
         char[] a = A.toCharArray();
+        // 获取长度
         int n = a.length;
+
         int[][] dp = new int[n][n];
         int max = 1;
         for(int i = 0; i < n; i++){
