@@ -69,4 +69,30 @@ public class T442 {
         T442 t442 = new T442();
         t442.findDuplicates(arr);
     }
+
+
+    /**
+     * 推荐的方法
+     * @param nums
+     * @return
+     */
+    public List<Integer> findDuplicates_2(int[] nums) {
+        List<Integer> duplicates = new ArrayList<Integer>();
+        int n = nums.length;
+        //对每一个元素进行遍历
+        for (int i = 0; i < n; i++) {
+            // 获取元素的值
+            int num = nums[i];
+            //获取值 -1 后的索引
+            int index = Math.abs(num) - 1;
+            if (nums[index] > 0) {
+                //如果大于0，那就值为相反数，也就是第一次
+                nums[index] = -nums[index];
+            } else {
+                //如果是小于 0,那就是第二次，可以加入到List中了。
+                duplicates.add(index + 1);
+            }
+        }
+        return duplicates;
+    }
 }
