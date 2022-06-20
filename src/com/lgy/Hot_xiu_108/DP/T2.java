@@ -1,6 +1,10 @@
 package com.lgy.Hot_xiu_108.DP;
 
 /**
+ * 2. 矩阵的最小路径和
+
+ https://www.nowcoder.com/practice/7d21b6be4c6b429bb92d219341c4f8bb?tp
+ Id=188&&tqId=38278&rp=1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
  * @author LGY
  * @create 2022-06-18 14:59
  */

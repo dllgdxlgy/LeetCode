@@ -1,38 +1,28 @@
 package com.lgy.Hot_xiu_108.DP;
 
 /**
- * 5. 01 背包
- https://www.nowcoder.com/practice/2820ea076d144b30806e72de5e5d4bbf?tpId=188&&tqId=38312&rp=1&ru=/activ
- ity/oj&qru=/ta/job-code-high-week/question-ranking
+ * 4. 买卖股票的最好时机(一)
+
+ https://www.nowcoder.com/practice/64b4262d4e6d4f6181cd45446a5821ec?tpId=188&&t
+ qId=38313&rp=1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
  * @author LGY
- * @create 2022-06-18 15:30
+ * @create 2022-06-18 15:20
  */
 public class T5 {
 
     /**
-     * 动态规划
-     *
-     * @param V
-     * @param n
-     * @param vw
+     * 自己做的
+     * @param prices
      * @return
      */
-
-    public int knapsack (int V, int n, int[][] vw) {
+    public int maxProfit (int[] prices) {
         // write code here
-        if(V == 0 || n == 0 || vw == null){
-            return 0;
+        int min_price = prices[0];
+        int res = 0;
+        for(int i = 1;i < prices.length; i++){
+            min_price =  Math.min(min_price,prices[i]);
+            res = Math.max(res,(prices[i]-min_price));
         }
-        int[][] dp = new int[n+1][V+1];
-        for(int i = 1; i <= n; i++){
-            for(int j = 1; j<=V; j++){
-                if(j < vw[i-1][0]){
-                    dp[i][j] = dp[i-1][j];
-                }else{
-                    dp[i][j] = Math.max(dp[i-1][j],dp[i-1][j-vw[i-1][0]]+vw[i-1][1]);
-                }
-            }
-        }
-        return dp[n][V];
+        return res;
     }
 }

@@ -1,29 +1,41 @@
 package com.lgy.Hot_xiu_108.DP;
 
 /**
- * T8. 不相邻最大子序列和
- https://www.nowcoder.com/practice/269b4dbd74e540aabd3aa9438208ed8d?tpId=1
- 88&&tqId=38344&rp=1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
+ * 8. 子数组最大乘积
+ *
+ https://www.nowcoder.com/practice/9c158345c867466293fc413cff570356?tpId=188&&tq
+ Id=38334&rp=1&ru=/activity/oj&qru=/ta/job-code-high-week/question-ranking
  * @author LGY
- * @create 2022-06-19 21:58
+ * @create 2022-06-19 21:03
  */
 public class T8 {
 
+
     /**
      *
-     * @param n
-     * @param array
+     * @param arr
      * @return
      */
-    public long subsequence (int n, int[] array) {
-        // write code here
-        long[] dp = new long[n+1];
-
-        dp[0] = 0;
-        dp[1] = Math.max(array[0],0);
-        for(int i = 2; i <= n; i++){
-            dp[i] = Math.max(dp[i-1],dp[i-2]+array[i-1]);
+    public double maxProduct(double[] arr) {
+        int len = arr.length;
+        if(len == 0){
+            return 0.00000;
         }
-        return dp[n];
+        double res = arr[0];
+        double[][] dp = new double[len][2];
+        dp[0][0] = arr[0];
+        dp[0][1] = arr[0];
+        for(int i = 1; i < len;i++){
+            double max = Math.max(dp[i-1][0]*arr[i],dp[i-1][1]*arr[i]);
+            double min = Math.min(dp[i-1][0]*arr[i],dp[i-1][1]*arr[i]);
+
+            dp[i][0] =max > arr[i] ? max:arr[i] ;
+            dp[i][1] = min < arr[i]?min:arr[i];
+            res =Math.max(dp[i][0],res);
+        }
+
+
+        return res;
+
     }
 }
