@@ -12,7 +12,8 @@ public class T10 {
 
 
     /**
-     * 自己做的
+     * 自己做的,这个是借助的 String 类型的数组。
+     *
      * @param str1
      * @param str2
      * @return
@@ -48,5 +49,65 @@ public class T10 {
             }
         }
         return dp[row][low];
+    }
+
+    /**
+     * 用的 是 int[] 数组
+     * @param str1
+     * @param str2
+     * @return
+     */
+    public String LCS_1 (String str1, String str2) {
+        int len_str1 = str1.length();
+        int len_str2 = str2.length();
+        int[][] dp = new int[len_str1+1][len_str2+1];
+
+        int row = 0;
+        int col = 0;
+        int res = 0;
+
+        for(int i = 1;i <= len_str1; i++){
+            for(int j = 1; j <= len_str2; j++){
+                if(str1.charAt(i-1) == str2.charAt(j-1)){
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                }else{
+                    dp[i][j] = 0;
+                }
+                if(dp[i][j] > res){
+                    res = dp[i][j];
+                    row = i;
+                    col = j;
+                }
+            }
+        }
+        return str1.substring(row-res,row);
+    }
+
+    /**
+     * LCS_1 优化以后的情况
+     * @param str1
+     * @param str2
+     * @return
+     */
+    public String LCS_2 (String str1, String str2) {
+        int len_str1 = str1.length();
+        int len_str2 = str2.length();
+        int[][] dp = new int[len_str1+1][len_str2+1];
+
+        int row = 0;
+        int res = 0;
+
+        for(int i = 1;i <= len_str1; i++){
+            for(int j = 1; j <= len_str2; j++){
+                if(str1.charAt(i-1) == str2.charAt(j-1)){
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                }
+                if(dp[i][j] > res){
+                    res = dp[i][j];
+                    row = i;
+                }
+            }
+        }
+        return str1.substring(row-res,row);
     }
 }
