@@ -1,5 +1,7 @@
 package com.lgy.Design_pattern.abstract_factory;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * // 抽象产品工厂
  * @author LGY
