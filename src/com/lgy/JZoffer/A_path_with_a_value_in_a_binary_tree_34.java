@@ -30,9 +30,6 @@ public class A_path_with_a_value_in_a_binary_tree_34 {
         recur(root.left, target);
         recur(root.right, target);
         path.removeLast();
-
-
-
     }
 
 
@@ -57,5 +54,6 @@ public class A_path_with_a_value_in_a_binary_tree_34 {
             this.right = right;
         }
     }
+
 
 }
