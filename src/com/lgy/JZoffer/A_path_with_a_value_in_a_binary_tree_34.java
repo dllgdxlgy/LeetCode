@@ -21,7 +21,8 @@ public class A_path_with_a_value_in_a_binary_tree_34 {
     }
 
     private void recur(TreeNode root, int target) {
-        if (root == null) return;
+        if (root == null)
+            return;
         path.add(root.val);
         target -= root.val;
         if (target == 0 && root.left == null && root.right == null) {

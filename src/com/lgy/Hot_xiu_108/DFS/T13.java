@@ -3,7 +3,10 @@ package com.lgy.Hot_xiu_108.DFS;
 import com.lgy.JZoffer.entity.TreeNode;
 
 /**
- * T13 .
+ * T13 .将升序数组转化为平衡二叉搜索树
+
+ https://www.nowcoder.com/practice/7e5b00f94b254da599a9472fe5ab283d?tpId=190&&tqId=36791&r
+ p=1&ru=/activity/oj&qru=/ta/job-code-high-rd/question-ranking
  * @author LGY
  * @create 2022-06-26 17:22
  */
