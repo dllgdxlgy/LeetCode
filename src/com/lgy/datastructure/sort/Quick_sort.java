@@ -1,5 +1,7 @@
 package com.lgy.datastructure.sort;
 
+import com.lgy.Hot_xiu_108.BFS.T1;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -93,7 +95,7 @@ public class Quick_sort {
         return left;
     }
 
-    public static void main(String[] args) {
+    public static void main_1(String[] args) {
         int[] arr = new int[]{1,4,6,-1,-5,-10,4,6,3,1,7,-1,2,5,6};
         Quick_sort quick_sort = new Quick_sort();
         // 测试递归快速排序
@@ -106,4 +108,55 @@ public class Quick_sort {
         }
     }
 
+    /*
+    -----------------------------------------------------------------------
+     */
+    public void quick_sort_1(int[] arr, int left,int right){
+        if(left >= right){
+            return;
+        }
+        int low =left;
+        int high = right;
+
+        int pivot = arr[low];
+        while (low < high){
+            while (low < high && arr[high] >= pivot){
+                --high;
+            }
+            arr[low] = arr[high];
+            while (low < high && arr[low] <= pivot){
+                ++low;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = pivot;
+        quick_sort_1(arr,left,low-1);
+        quick_sort_1(arr,low+1,right);
+
+    }
+
+    public static void main_2(String[] args) {
+        int[] arr = new int[]{40,38,46,56,79,84};
+//        T1 t1 = new T1();
+//        t1.quick_sort_1(arr,0,5);
+        for (int i: arr) {
+            System.out.print(i);
+            System.out.print(" ");
+        }
+    }
+
+
+    public void quick_sort_2 (int[] arr, int left,int right){
+        if(left >= right){
+            return;
+        }
+        int pivotIndex = Partition(arr,left,right);
+        quick_sort_2(arr,left,pivotIndex-1);
+        quick_sort_2(arr,pivotIndex+1,right);
+    }
+    public int Partition(int[] arr, int left, int right){
+
+
+        return 0;
+    }
 }
