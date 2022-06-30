@@ -49,7 +49,34 @@ public class T11 {
         root = root.next;
         root.next=new ListNode(2);
         T11 t11 = new T11();
-        t11.partition(node,3);
+        t11.partition_1(node,3);
 
+    }
+
+    /**
+     * 方法 2
+     * @param head
+     * @param x
+     * @return
+     */
+    public ListNode partition_1 (ListNode head, int x) {
+        // write code here
+
+        ListNode root = new ListNode(0);
+        ListNode temp = root;
+        ListNode node = new ListNode(0);
+        ListNode temp1 = node;
+        while(head != null){
+            if(head.val < x){
+                temp.next = head;
+                temp = temp.next;
+            }else{
+                temp1.next = head;
+                temp1 = temp1.next;
+            }
+            head = head.next;
+        }
+        temp.next = node.next;
+        return root.next;
     }
 }
