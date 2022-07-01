@@ -4,6 +4,7 @@ import com.lgy.JZoffer.entity.ListNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.locks.Lock;
 
 /**
  * T8. 判断一个链表是否为回文结构
@@ -55,5 +56,7 @@ public class T8 {
 
         T8 t8 = new T8();
         boolean pail = t8.isPail(node);
+
+
     }
 }
