@@ -52,4 +52,31 @@ public class T28 {
         T28 t28 = new T28();
         int i = t28.strStr(str1, str2);
     }
+
+
+    /**
+     * 二刷
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public int strStr_1(String haystack, String needle) {
+        if(needle == ""){
+            return 0;
+        }
+        if(needle.length() > haystack.length()){
+            return -1;
+        }
+        int len = needle.length();
+        for(int i = 0; i<haystack.length();i++){
+            if(i + len > haystack.length()){
+                break;
+            }
+            if (haystack.charAt(i) == needle.charAt(0)){
+                if (haystack.substring(i,i+len).equals(needle))
+                    return i;
+            }
+        }
+        return -1;
+    }
 }
