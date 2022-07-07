@@ -6,6 +6,7 @@ import com.lgy.JZoffer.entity.TreeNode;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 练习专用
@@ -60,5 +61,8 @@ public class Practise {
 //        System.out.println(substring.equals(s1));
         //System.out.println(substring);
         System.out.println(i);
+        ConcurrentHashMap map = new ConcurrentHashMap();
     }
+
+
 }

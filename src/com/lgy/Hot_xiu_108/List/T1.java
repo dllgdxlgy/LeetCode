@@ -53,7 +53,7 @@ public class T1 {
      * @param head
      * @return
      */
-    public ListNode reverseList(ListNode head) {
+    public ListNode reverseList_1(ListNode head) {
         if(head == null){
             return null;
         }
@@ -69,4 +69,27 @@ public class T1 {
         return pre;
 
     }
+
+    /**
+     * 二刷
+     * @param head
+     * @return
+     */
+    public ListNode ReverseList_2(ListNode head) {
+
+        if(head == null){
+            return null;
+        }
+        ListNode next = null;
+        ListNode pre = null;
+
+        while(head != null){
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
+
 }
