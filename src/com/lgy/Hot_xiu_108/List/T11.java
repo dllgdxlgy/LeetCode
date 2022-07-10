@@ -2,8 +2,7 @@ package com.lgy.Hot_xiu_108.List;
 
 import com.lgy.JZoffer.entity.ListNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 11. 重排列表
@@ -17,6 +16,10 @@ import java.util.List;
  */
 public class T11 {
 
+    /**
+     * 第一遍
+     * @param head
+     */
     public void reorderList(ListNode head) {
 
         if(head == null){
@@ -43,4 +46,6 @@ public class T11 {
         list.get(left).next = null;
 
     }
+
+
 }

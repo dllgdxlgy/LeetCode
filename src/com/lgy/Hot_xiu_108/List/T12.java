@@ -15,11 +15,32 @@ import com.lgy.JZoffer.entity.ListNode;
 public class T12 {
 
     /**
-     * 自己做的
+     * z最优解
      * @param head
      * @return
      */
     public ListNode deleteDuplicates (ListNode head) {
+
+        if(head == null){
+            return head;
+        }
+        ListNode cur = head;
+        while (cur.next != null){
+            if(cur.val == cur.next.val){
+                cur.next = cur.next.next;
+            }else {
+                cur = cur.next;
+            }
+        }
+        return head;
+    }
+
+    /**
+     * 自己做的
+     * @param head
+     * @return
+     */
+    public ListNode deleteDuplicates_1 (ListNode head) {
         if(head == null){
             return head;
         }
@@ -48,7 +69,7 @@ public class T12 {
      * @param head
      * @return
      */
-    public ListNode deleteDuplicates_1 (ListNode head) {
+    public ListNode deleteDuplicates_2 (ListNode head) {
         if(head == null){
             return head;
         }

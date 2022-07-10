@@ -1,6 +1,10 @@
 package com.lgy.Hot_xiu_108.List;
 
 import com.lgy.JZoffer.entity.ListNode;
+import com.lgy.company.leetcodecom.T;
+
+import java.util.Collections;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 5. 链表中的节点每k个一组翻转
@@ -53,9 +57,12 @@ public class T5 {
             next = head.next;
             head.next = pre;
             pre = head;
-            head = next;
+       head = next;
         }
+
+       Thread
         return pre;
 
     }
+
 }
