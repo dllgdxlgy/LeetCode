@@ -40,6 +40,7 @@ public class T5 {
 
             pre.next = reverse(start);
             start.next = next;
+
             pre = start;
             end = start;
         }
@@ -53,6 +54,7 @@ public class T5 {
         }
         ListNode pre = null;
         ListNode next = null;
+
         while (head != null) {
 
             next = head.next;

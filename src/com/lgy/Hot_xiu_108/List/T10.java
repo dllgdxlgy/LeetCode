@@ -4,10 +4,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- *10.
- https://www.nowcoder.com/practice/41c399fdb60
- 04b31a6cbb047c641ed8a?tpId=188&&tqId=38296&rp=1&r
- u=/activity/oj&qru=/ta/job-code-high-week/question-ranking
+ *10. 环形链表的约瑟夫问题
+ *
+ *  https://www.nowcoder.com/practice/41c399fdb60
+ *  04b31a6cbb047c641ed8a?tpId=188&&tqId=38296&rp=1&r
+ *  u=/activity/oj&qru=/ta/job-code-high-week/question-ranking
+ *
+ * 相当于Leetcode 上的 1823 和  Leetcode 的 剑指 Offer 62. 圆圈中最后剩下的数字，题目一样。
+ *
  * @author LGY
  * @create 2022-06-05 21:14
  */
@@ -31,7 +35,7 @@ public class T10 {
 
 
     /**
-     * 传统解法二 ：使用队列
+     * 传统解法二 ：使用队列, 如果是在 剑指 offer 上，那就可能已经超时。
      * @param n
      * @param k
      * @return

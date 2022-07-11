@@ -27,8 +27,8 @@ public class T8 {
         ListNode node_2 = pHead2;
 
         while(node_1 != node_2){
-            node_1 = (node_1 == null)?pHead2:node_1.next;
-            node_2 = (node_2 == null)?pHead1:node_2.next;
+            node_1 = (node_1 == null)? pHead2:node_1.next;
+            node_2 = (node_2 == null)? pHead1:node_2.next;
         }
 
         return node_1;
