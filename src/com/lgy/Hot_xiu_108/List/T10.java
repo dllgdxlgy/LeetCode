@@ -1,5 +1,8 @@
 package com.lgy.Hot_xiu_108.List;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  *10.
  https://www.nowcoder.com/practice/41c399fdb60
@@ -26,4 +29,32 @@ public class T10 {
         return ans;
     }
 
+
+    /**
+     * 传统解法二 ：使用队列
+     * @param n
+     * @param k
+     * @return
+     */
+
+    //相关知识
+
+    //queue.poll() 推出队列元素
+    //queue.add() 添加元素
+    public int findTheWinner(int n, int k) {
+
+        Queue<Integer> queue = new LinkedList<>(); // 注意队列的创建方式
+
+        for(int i = 1; i <= n;i++){
+            queue.add(i);
+        }
+
+        for(int i = 1; i < n; i++){
+            for(int j = 1; j < k; j++){
+                queue.add(queue.poll());
+            }
+            queue.poll();
+        }
+        return queue.poll();
+    }
 }

@@ -8,14 +8,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 5. 链表中的节点每k个一组翻转
+ *
  * @author LGY
  * @create 2022-06-05 15:29
  */
 public class T5 {
-    public ListNode reverseKGroup (ListNode head, int k) {
+    public ListNode reverseKGroup(ListNode head, int k) {
 
         // 先判断是不是特殊情况
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
         //创建一个头节点，并指向head；
@@ -25,11 +26,11 @@ public class T5 {
         // 两个指针
         ListNode pre = dummy;
         ListNode end = dummy;
-        while(end.next != null){
-            for(int i = 0; i<k && end!=null;i++){
+        while (end.next != null) {
+            for (int i = 0; i < k && end != null; i++) {
                 end = end.next;
             }
-            if(end == null){
+            if (end == null) {
                 break;
             }
             ListNode next = end.next;
@@ -47,20 +48,18 @@ public class T5 {
 
     //反转链表的方法
     public ListNode reverse(ListNode head) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
         ListNode pre = null;
-        ListNode next  = null;
-        while(head!=null){
+        ListNode next = null;
+        while (head != null) {
 
             next = head.next;
             head.next = pre;
             pre = head;
-       head = next;
+            head = next;
         }
-
-       Thread
         return pre;
 
     }
