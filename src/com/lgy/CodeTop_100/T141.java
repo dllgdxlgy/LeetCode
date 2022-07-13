@@ -1,4 +1,4 @@
-package com.lgy.Hot_xiu_108.List;
+package com.lgy.CodeTop_100;
 
 import com.lgy.JZoffer.entity.ListNode;
 
@@ -15,7 +15,7 @@ import java.util.HashSet;
  * @author LGY
  * @create 2022-06-04 21:43
  */
-public class T3 {
+public class T141 {
 
     /**
      * 投机取巧法(我的)
@@ -83,58 +83,4 @@ public class T3 {
 
     }
 
-
-    /**
-     * 环形链表 II
-     https://leetcode.cn/problems/linked-list-cycle-ii/submissions/
-     * @param head
-     * @return
-     */
-    public ListNode detectCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-
-        while(fast != null && fast.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-            if(slow == fast)break;
-        }
-        if(fast == null || fast.next == null){
-            return null;
-        }
-        fast = head;
-        while(fast != slow){
-            fast = fast.next;
-            slow = slow.next;
-        }
-        return slow;
-    }
-
-    /**
-     * 环形链表II ———— 借助 Hashset
-     * @param head
-     * @return
-     */
-    public ListNode detectCycle_1(ListNode head) {
-
-        if (head == null || head.next == null) {
-            return null;
-        }
-
-        HashSet<ListNode> set = new HashSet<>();
-        ListNode listNode = head;
-
-
-        while (listNode != null) {
-
-            if (!set.add(listNode)){
-                return listNode;
-            }
-            listNode = listNode.next;
-
-        }
-
-
-        return null;
-    }
 }
