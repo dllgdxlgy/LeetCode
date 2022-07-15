@@ -24,6 +24,7 @@ public class T102 {
         }
         //注意这个队列的创建方式
         Queue<TreeNode> queue = new LinkedList<>();
+        //添加元素的方式
         queue.add(root);
         while(!queue.isEmpty()){
             int size = queue.size();
