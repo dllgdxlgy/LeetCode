@@ -96,7 +96,7 @@ public class Sum_Of_three_15 {
 
 //        List<List<Integer>> listList = sot.threeSum(arr);
 //        System.out.println(listList);
-        int[] arr = new int[]{0,0,0};
+        int[] arr = new int[]{0, 0, 0};
         sot.threeSum_2(arr);
 
     }
@@ -109,14 +109,14 @@ public class Sum_Of_three_15 {
         List<Integer> list = new ArrayList<>();
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
-            if ( i == 0 || nums[i] != nums[i-1]){
-                for (int j = i+1; j < nums.length ; j++) {
-                    if (j == i+1 || nums[j] != nums[j-1]){
-                        for (int k = j+1; k < nums.length ; k++) {
-                            if (k == j+1 || nums[k] != nums[k-1]){
+            if (i == 0 || nums[i] != nums[i - 1]) {
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (j == i + 1 || nums[j] != nums[j - 1]) {
+                        for (int k = j + 1; k < nums.length; k++) {
+                            if (k == j + 1 || nums[k] != nums[k - 1]) {
                                 int sum = 0;
                                 sum = nums[i] + nums[j] + nums[k];
-                                if (sum == 0){
+                                if (sum == 0) {
                                     list.add(nums[i]);
                                     list.add(nums[j]);
                                     list.add(nums[k]);
@@ -133,27 +133,28 @@ public class Sum_Of_three_15 {
         return listList;
 
     }
+
     public List<List<Integer>> threeSum_3(int[] nums) {
         List<List<Integer>> listList = new ArrayList<>();
-        if (nums.length<3){
+        if (nums.length < 3) {
             return listList;
         }
         List<Integer> list = new ArrayList<>();
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length; i++) {
-            if (i == 0||nums[i] !=nums[i-1]){
-                int three = nums.length-1;
+            if (i == 0 || nums[i] != nums[i - 1]) {
+                int three = nums.length - 1;
                 int target = -nums[i];
-                for (int j = i+1; j < nums.length; j++) {
-                    if (j == i+1 || nums[j] != nums[j-1]){
-                        while (j < three && nums[j] +nums[three]>target){
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (j == i + 1 || nums[j] != nums[j - 1]) {
+                        while (j < three && nums[j] + nums[three] > target) {
                             --three;
                         }
-                        if (j == three){
+                        if (j == three) {
                             break;
                         }
-                        if (nums[j] +nums[three] == target){
+                        if (nums[j] + nums[three] == target) {
                             list.add(nums[i]);
                             list.add(nums[j]);
                             list.add(nums[three]);
@@ -165,26 +166,49 @@ public class Sum_Of_three_15 {
             }
         }
 
-    return listList;
+        return listList;
 
     }
 
 
+    /**
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum4(int[] nums) {
 
 
+        List<List<Integer>> listList = new ArrayList<>();
+        Arrays.sort(nums);
 
+        for (int i = 0; i < nums.length; i++) {
 
-
-
-
-
-
-
-
-
-
-
-
-
+            if (nums[i] > 0) {
+                return listList;
+            }
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            int L = i + 1, R = nums.length - 1;
+            while (L < R) {
+                int sum = nums[i] + nums[L] + nums[R];
+                if (sum == 0) {
+                    List<Integer> list = new ArrayList<>();
+//                   Arrays.asList(nums[i],nums[L],nums[R]);
+                    list.add(nums[i]);
+                    list.add(nums[L]);
+                    list.add(nums[R]);
+                    listList.add(list);//将三元组加入到 listList
+                    while (L < R && nums[L + 1] == nums[L]) ++L;
+                    while (L < R && nums[R - 1] == nums[R]) --R;
+                    ++L;
+                    --R;
+                } else if (sum < 0) {
+                    ++L;
+                } else {
+                    --R;
+                }
+            }
+        }
+        return listList;
+    }
 
 }
