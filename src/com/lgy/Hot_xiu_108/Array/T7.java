@@ -43,4 +43,18 @@ public class T7 {
         }
         return -1;
     }
+
+    public int MoreThanHalfNum_Solution_2(int [] array) {
+
+        int x = 0;
+        int voit = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(voit == 0){
+                x = array[i];
+            }
+            voit += array[i] == x?1:-1;
+        }
+        return  x;
+    }
+
 }
