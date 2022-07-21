@@ -1,5 +1,7 @@
 package com.lgy.Hot_xiu_108.Array;
 
+import java.util.Arrays;
+
 /**
  *23. 带权值的最小路径和
  https://www.nowcoder.com//practice/23462ed010024fcabb7dbd3df57c7
@@ -37,5 +39,39 @@ public class T23 {
             }
         }
         return res[n-1][m-1];
+    }
+
+
+
+    /**
+     * 递归 + 备忘录
+     *
+     * @param grid
+     * @return
+     */
+    int[][] arr;
+    public int minPathSum_1(int[][] grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+        arr = new int[n][m];
+
+        for(int[] r : arr){
+            Arrays.fill(r,-1);
+        }
+        return dp(grid,n-1,m-1);
+    }
+
+    public int dp(int[][] grid, int n ,int m){
+        if(n == 0 && m == 0){
+            return grid[0][0];
+        }
+        if(n < 0 || m < 0){
+            return Integer.MAX_VALUE;
+        }
+        if(arr[n][m] != -1){
+            return arr[n][m];
+        }
+        arr[n][m] = Math.min(dp(grid,n-1,m),dp(grid,n,m-1))+grid[n][m];
+        return arr[n][m];
     }
 }
