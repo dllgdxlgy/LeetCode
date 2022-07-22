@@ -29,6 +29,30 @@ public class T19 {
         return res;
 
     }
+
+    public int maxProduct(int[] nums) {
+
+        int[] max_arr = new int[nums.length];
+        int[] min_arr = new int[nums.length];
+        max_arr[0] = nums[0];
+        min_arr[0] = nums[0];
+        int res = nums[0];
+
+        for(int i = 1 ;i < nums.length;i++){
+            int max = Math.max(max_arr[i-1]*nums[i],min_arr[i-1]*nums[i]);
+            max_arr[i] = Math.max(max,nums[i]);
+            int min = Math.min(max_arr[i-1]*nums[i],min_arr[i-1]*nums[i]);
+            min_arr[i] = Math.min(min,nums[i]);
+            res = Math.max(max_arr[i],min_arr[i]);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{2,3,-2,4};
+        T19 t19 = new T19();
+        int i = t19.maxProduct(arr);
+    }
 }
 
 
