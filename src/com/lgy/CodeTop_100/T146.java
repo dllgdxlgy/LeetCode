@@ -160,11 +160,6 @@ class LRUCache_1 {
         node.next.prev = node;
         node.prev = head;
     }
-
-    private void removeNode(Node node){
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
-    }
     private void removeTailNode(){
         removeNode(tail.prev);
     }
@@ -173,4 +168,9 @@ class LRUCache_1 {
         removeNode(node);
         addToHead(node);
     }
+    private void removeNode(Node node){
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+    }
+
 }
