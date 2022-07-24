@@ -5,7 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- *14.数组中的最长连续子序列
+ *14.数组中的最长连续子序列,要求时间复杂度为 O(n)
+ *
  *
  https://www.nowcoder.com//practice
  /eac1c953170243338f941959146ac4bf?tpId=190&&tqId=3
@@ -18,11 +19,39 @@ public class T14 {
 
 
     /**
-     *自己做的
+     * 推荐这种做法，只有有着一种时间复杂度为 O(n)
      * @param arr
      * @return
      */
     public int MLS (int[] arr) {
+
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        int res = 0;
+        for (int num: set) {
+            if(!set.contains(num-1)){
+
+                int currentNum = num;
+                int currentStraek = 1;
+                while (set.contains(currentNum+1)){
+                    currentNum++;
+                    currentStraek++;
+                }
+                res = Math.max(res,currentStraek);
+            }
+        }
+        return res;
+    }
+
+
+    /**
+     *自己做的
+     * @param arr
+     * @return
+     */
+    public int MLS_0 (int[] arr) {
         // 获取数组的长度
         int len = arr.length;
         //利用 set
