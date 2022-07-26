@@ -7,7 +7,7 @@ package com.lgy.CodeTop_100;
 public class T5 {
 
     /**
-     * 中心扩散法
+     * 中心扩散法，推荐的方法
      *
      * @param s
      * @return
@@ -32,6 +32,8 @@ public class T5 {
         if (right >= s.length()) {
             return "";
         }
+
+        //可以没有这几行
         if (s.charAt(left) != s.charAt(right)) {
             return "";
         }
@@ -42,6 +44,7 @@ public class T5 {
         }
 
         //注意：这里substring()要回写。
+        //注意substring() 的写法
         return s.substring(left + 1, right); // 注意，这里是left分别减了一次和加了一次。
 
     }
@@ -90,6 +93,7 @@ public class T5 {
                 }
             }
         }
+
         return s.substring(begin, res_len + begin);
     }
 

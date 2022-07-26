@@ -11,6 +11,23 @@ package com.lgy.Hot_xiu_108.Character_String;
 public class T5 {
 
     /**
+     * 推荐的方法
+     * @param s
+     */
+    public void reverseString(char[] s) {
+
+        int left = 0;
+        int right = s.length-1;
+        while(left<right){
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            left++;
+            right--;
+        }
+    }
+
+    /**
      * 自己做的
      * @param str
      * @return

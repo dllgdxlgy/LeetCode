@@ -58,4 +58,37 @@ public class T1 {
         T1 t1 = new T1();
         int i = t1.lengthOfLongestSubstring(s);
     }
+
+
+    /**
+     * 题目：最长无重复子数组
+     * @param arr
+     * @return
+     */
+    public int maxLength (int[] arr) {
+        // write code here
+        HashMap<Integer,Integer> window = new HashMap<>();
+
+        int left = 0;
+        int right = 0;
+        int res = 1;
+        while(right < arr.length){
+            int temp = arr[right];
+            right++;
+            window.put(temp,window.getOrDefault(temp,0)+1);
+
+
+            while(window.get(temp).intValue()>1){
+                int temp_2 = arr[left];
+                left++;
+                window.put(temp_2,window.getOrDefault(temp_2,0)-1);
+                if(window.get(temp_2) == 0){
+                    window.remove(temp_2);
+                }
+
+            }
+            res = Math.max(res,right-left);
+        }
+        return res;
+    }
 }
