@@ -51,11 +51,10 @@ public class The_first_character_that_appears_only_once_50 {
      * @param args
      */
     public static void main(String[] args) {
-        String s = "aaasss";
-        char[] a = s.toCharArray();
-        for (char mun : a) {
-            System.out.println(mun);
-        }
+        String s = "abaedcba";
+        The_first_character_that_appears_only_once_50 t= new The_first_character_that_appears_only_once_50();
+        char c = t.firstUniqChar(s);
+        System.out.println(c);
     }
 }
 

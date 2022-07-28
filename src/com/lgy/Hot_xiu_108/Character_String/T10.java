@@ -62,7 +62,7 @@ public class T10 {
 
     public static void main(String[] args) {
         T10 t10 = new T10();
-        String seEfr_dSwq = t10.trans_4("seEfr DSwq", 10);
+        String seEfr_dSwq = t10.trans("seEfr DSwq", 10);
         System.out.println(seEfr_dSwq);
     }
 

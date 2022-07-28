@@ -9,7 +9,7 @@ public class T14 {
 
     public static void main(String[] args) {
         T14 t14 = new T14();
-        String solve = t14.solve("11", "99");
+        String solve = t14.solve("23", "45");
         System.out.println(solve);
     }
 
@@ -70,4 +70,5 @@ public class T14 {
         // 特殊判断：是不是长度为 0， 如果长度为 0 ，那就直接返回字符串"0"。否则就直接返回sb.长度。
         return sb.length() == 0? "0":sb.toString();
     }
+
 }

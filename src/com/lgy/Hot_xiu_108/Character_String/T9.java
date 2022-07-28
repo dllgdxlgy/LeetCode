@@ -46,7 +46,32 @@ public class T9 {
 
     public static void main(String[] args) {
         T9 t9 = new T9();
-        String[] arr = new String[]{"a","b"};
-        t9.longestCommonPrefix(arr);
+        String[] arr = new String[]{"flower","flow","flight"};
+        t9.longestCommonPrefix_1(arr);
+    }
+
+    public String longestCommonPrefix_1(String[] strs) {
+        if(strs.length ==1){
+            return strs[0];
+        }
+        String str = strs[0];
+        for(int i = 1;i < strs.length;i++){
+            str = max_pre(str,strs[i]);
+        }
+        return str;
+    }
+
+    public String max_pre(String s1,String s2){
+        int index = 0;
+        int len= Math.min(s1.length(),s2.length());
+        int res = len;
+        while(index < len){
+            if(s1.charAt(index) != s2.charAt(index)){
+                res = index;
+                break;
+            }
+            index++;
+        }
+        return s1.substring(0,res);
     }
 }
