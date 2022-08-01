@@ -63,12 +63,13 @@ public class Practise {
         //System.out.println(substring);
 //        System.out.println(i);
 //        ConcurrentHashMap map = new ConcurrentHashMap();
-//
-        int[] arr = new int[]{4,2,9,1,0,-1,6,3,8};
-        sortByStack(arr);
-        for(int c : arr){
-            System.out.println(c);
-        }
+////
+//        int[] arr = new int[]{4,2,9,1,0,-1,6,3,8};
+//        sortByStack(arr);
+//        for(int c : arr){
+//            System.out.println(c);
+//        }
+
     }
 
 //    class singleton{
@@ -158,6 +159,8 @@ public class Practise {
         arr[left] = temp;
         return left;
     }
+
+
 
 
 }

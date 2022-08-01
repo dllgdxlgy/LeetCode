@@ -23,21 +23,22 @@ public class Mgr06 {
         }
         return INSTANCE;
     }
-    //该类中其他方法
-    public void add(){
-        System.out.println("add...........");
-    }
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    System.out.println(Mgr06.getInstance().hashCode());
-                }
-            }).start();
-
-        }
-    }
+//    //该类中其他方法
+//    public void add(){
+//        System.out.println("add...........");
+//    }
+//
+//    public static void main(String[] args) {
+//        for (int i = 0; i < 100; i++) {
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    System.out.println(Mgr06.getInstance().hashCode());
+//                }
+//            }).start();
+//
+//        }
+//    }
 
 }
