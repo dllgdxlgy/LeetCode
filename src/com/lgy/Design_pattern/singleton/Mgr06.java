@@ -5,7 +5,9 @@ package com.lgy.Design_pattern.singleton;
  */
 public class Mgr06 {
     private static Mgr06 INSTANCE;
-    private Mgr06(){}
+
+    private Mgr06() {
+    }
 
     public static Mgr06 getInstance() {
         if (INSTANCE == null) {
@@ -24,7 +26,7 @@ public class Mgr06 {
         return INSTANCE;
     }
 
-//    //该类中其他方法
+    //    //该类中其他方法
 //    public void add(){
 //        System.out.println("add...........");
 //    }
@@ -40,5 +42,16 @@ public class Mgr06 {
 //
 //        }
 //    }
+    public static void main(String[] args) {
+
+        int a = 100;
+        Integer b = 100;
+        Integer c = 100;
+        boolean d = a == b;
+        System.out.println(d);
+        boolean e = b==c;
+        System.out.println(e);
+
+    }
 
 }
