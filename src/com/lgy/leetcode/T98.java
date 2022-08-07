@@ -1,6 +1,8 @@
 package com.lgy.leetcode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author LGY
@@ -57,6 +59,36 @@ public class T98 {
             }
         }
         System.out.println("true");
+    }
+
+
+    /**
+     * 第二遍
+     */
+    List<Integer> list = new ArrayList<>();
+
+    public boolean isValidBST_1(TreeNode root) {
+        boolean isFlag = true;
+        isVali(root);
+        for(int i = 1; i< list.size();i++){
+            if(list.get(i)<=list.get(i-1)){
+                isFlag = false;
+                break;
+            }
+        }
+        return isFlag;
+    }
+
+    public void isVali(TreeNode node){
+        if(node == null){
+            return;
+        }
+
+        isVali(node.left);
+
+        list.add(node.val);
+
+        isVali(node.right);
     }
 
 }
