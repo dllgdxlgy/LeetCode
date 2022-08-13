@@ -11,6 +11,53 @@ import java.util.List;
  */
 public class T131 {
 
+
+    /**
+     * 再做一遍
+     */
+    List<List<String>> res = new ArrayList<>();
+    List<String> list = new ArrayList<>();
+
+    public List<List<String>> partition(String s) {
+
+
+        backtracking(s, 0);
+
+        return res;
+    }
+
+    public void backtracking(String s, int start) {
+        if (start >= s.length()) {
+            res.add(new ArrayList<>(list));
+            return;
+        }
+
+        for (int i = start; i < s.length(); i++) {
+            if (isPalindroe(s, start, i)) {
+                String str = s.substring(start, i + 1);
+                list.add(str);
+            } else {
+                continue;
+            }
+
+            backtracking(s, i + 1);
+            list.remove(list.size() - 1);
+
+        }
+    }
+
+    public boolean isPalindroe(String s, int i, int j) {
+
+        while (i <= j && s.charAt(i) == s.charAt(j)) {
+            i++;
+            j--;
+        }
+        if (i >= j) {
+            return true;
+        }
+        return false;
+    }
+
 //        public List<List<Integer>> permute(int[] nums) {
 //            // 获取数组的长长度
 //            int len = nums.length;
@@ -60,64 +107,63 @@ public class T131 {
 //
 
 
-
-        public List<List<String>> partition(String s) {
-            int len = s.length();
-            List<List<String>> res = new ArrayList<>();
-            if (len == 0) {
-                return res;
-            }
-
-            // Stack 这个类 Java 的文档里推荐写成 Deque<Integer> stack = new ArrayDeque<Integer>();
-            // 注意：只使用 stack 相关的接口
-            Deque<String> stack = new ArrayDeque<>();
-            char[] charArray = s.toCharArray();
-            dfs(charArray, 0, len, stack, res);
+    public List<List<String>> partition_1(String s) {
+        int len = s.length();
+        List<List<String>> res = new ArrayList<>();
+        if (len == 0) {
             return res;
         }
 
-        /**
-         * @param charArray
-         * @param index     起始字符的索引
-         * @param len       字符串 s 的长度，可以设置为全局变量
-         * @param path      记录从根结点到叶子结点的路径
-         * @param res       记录所有的结果
-         */
-        private void dfs(char[] charArray, int index, int len, Deque<String> path, List<List<String>> res) {
-            if (index == len) {
-                res.add(new ArrayList<>(path));
-                return;
-            }
+        // Stack 这个类 Java 的文档里推荐写成 Deque<Integer> stack = new ArrayDeque<Integer>();
+        // 注意：只使用 stack 相关的接口
+        Deque<String> stack = new ArrayDeque<>();
+        char[] charArray = s.toCharArray();
+        dfs(charArray, 0, len, stack, res);
+        return res;
+    }
 
-            for (int i = index; i < len; i++) {
-                // 因为截取字符串是消耗性能的，因此，采用传子串下标的方式判断一个子串是否是回文子串
-                if (!checkPalindrome(charArray, index, i)) {
-                    continue;
-                }
-                path.addLast(new String(charArray, index, i + 1 - index));
-                dfs(charArray, i + 1, len, path, res);
-                path.removeLast();
-            }
+    /**
+     * @param charArray
+     * @param index     起始字符的索引
+     * @param len       字符串 s 的长度，可以设置为全局变量
+     * @param path      记录从根结点到叶子结点的路径
+     * @param res       记录所有的结果
+     */
+    private void dfs(char[] charArray, int index, int len, Deque<String> path, List<List<String>> res) {
+        if (index == len) {
+            res.add(new ArrayList<>(path));
+            return;
         }
 
-        /**
-         * 这一步的时间复杂度是 O(N)，优化的解法是，先采用动态规划，把回文子串的结果记录在一个表格里
-         *
-         * @param charArray
-         * @param left      子串的左边界，可以取到
-         * @param right     子串的右边界，可以取到
-         * @return
-         */
-        private boolean checkPalindrome(char[] charArray, int left, int right) {
-            while (left < right) {
-                if (charArray[left] != charArray[right]) {
-                    return false;
-                }
-                left++;
-                right--;
+        for (int i = index; i < len; i++) {
+            // 因为截取字符串是消耗性能的，因此，采用传子串下标的方式判断一个子串是否是回文子串
+            if (!checkPalindrome(charArray, index, i)) {
+                continue;
             }
-            return true;
+            path.addLast(new String(charArray, index, i + 1 - index));
+            dfs(charArray, i + 1, len, path, res);
+            path.removeLast();
         }
+    }
+
+    /**
+     * 这一步的时间复杂度是 O(N)，优化的解法是，先采用动态规划，把回文子串的结果记录在一个表格里
+     *
+     * @param charArray
+     * @param left      子串的左边界，可以取到
+     * @param right     子串的右边界，可以取到
+     * @return
+     */
+    private boolean checkPalindrome(char[] charArray, int left, int right) {
+        while (left < right) {
+            if (charArray[left] != charArray[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         String str = "abcdd";
