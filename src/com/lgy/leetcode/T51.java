@@ -67,4 +67,9 @@ public class T51 {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        T51 t51 = new T51();
+        List<List<String>> lists = t51.solveNQueens(4);
+    }
 }
