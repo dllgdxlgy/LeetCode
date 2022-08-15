@@ -6,7 +6,29 @@ import com.lgy.company.leetcodecom.T;
 import java.util.Arrays;
 
 public class T55 {
+
+
+    /**
+     *
+     * @param nums
+     * @return
+     */
     public boolean canJump(int[] nums) {
+        int cover = 0;
+        if(nums.length == 1){
+            return true;
+        }
+        for(int i = 0 ;i <= cover; i++){
+            cover = Math.max(cover,i+nums[i]);
+            if(cover >= nums.length-1){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean canJump_1(int[] nums) {
         int length = nums.length;
         boolean[] res = new boolean[length];
 
