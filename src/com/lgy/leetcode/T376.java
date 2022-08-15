@@ -1,5 +1,6 @@
 package com.lgy.leetcode;
 
+
 /**
  * T376 摆动序列
  * @author LGY
@@ -8,6 +9,8 @@ package com.lgy.leetcode;
 public class T376 {
 
     public int wiggleMaxLength(int[] nums) {
+
+
         int len = nums.length;
         int[][] dp = new int[len][2];
         dp[0][0] = 1;

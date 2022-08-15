@@ -19,4 +19,10 @@ public class T121 {
         }
         return max;
     }
+
+    public static void main(String[] args) {
+        T121 t121 = new T121();
+        int[] arr = new int[]{7,1,5,3,6,4};
+        int i = t121.maxProfit(arr);
+    }
 }
