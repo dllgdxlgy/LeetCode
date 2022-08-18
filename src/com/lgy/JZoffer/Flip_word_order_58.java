@@ -1,5 +1,7 @@
 package com.lgy.JZoffer;
 
+import com.lgy.company.leetcodecom.T;
+
 /**
  * 反转字符串
  */
@@ -44,4 +46,11 @@ public class Flip_word_order_58 {
         return stringBuilder.toString().trim();
     }
 
+
+    public static void main(String[] args) {
+        Flip_word_order_58 flip_word_order_58 = new Flip_word_order_58();
+        String s = flip_word_order_58.reverseWords_1("sss  ddd   ggg");
+        System.out.println(s);
+
+    }
 }
