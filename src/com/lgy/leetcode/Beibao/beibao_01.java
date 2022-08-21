@@ -1,4 +1,4 @@
-package com.lgy.leetcode;
+package com.lgy.leetcode.Beibao;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author LGY
  * @create 2022-08-19 14:50
  */
-public class beibao {
+public class beibao_01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
