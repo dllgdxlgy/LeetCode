@@ -60,5 +60,56 @@ public class T23 {
     }
 
 
+    /**
+     * 二刷
+     * @param lists
+     * @return
+     */
+    public ListNode mergeKLists_2(ListNode[] lists) {
+        if(lists == null || lists.length == 0){
+            return null;
+        }
+        if(lists.length == 1 ){
+            return lists[0];
+        }
+        ListNode res = lists[0];
+        for(int i = 1;i < lists.length; i++){
+            res = merge(res,lists[i]);
+        }
+        return res;
+    }
+
+    public ListNode merge(ListNode list1,ListNode list2){
+        if(list1 == null){
+            return list2;
+        }
+        if(list2 == null){
+            return list1;
+        }
+
+        ListNode root = new ListNode(-1);
+        ListNode temp = root;
+
+        while(list1!= null && list2 != null){
+            if(list1.val < list2.val){
+                temp.next = list1;
+                list1 = list1.next;
+                temp = temp.next;
+            }else{
+                temp.next = list2;
+                list2 = list2.next;
+                temp = temp.next;
+            }
+        }
+        if(list1!=null){
+            temp.next = list1;
+        }
+        if(list2 != null){
+            temp.next = list2;
+        }
+
+        return root.next;
+    }
+
 
 }
