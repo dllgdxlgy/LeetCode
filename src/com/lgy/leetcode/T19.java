@@ -1,5 +1,8 @@
 package com.lgy.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author LGY
  * @create 2022-08-25 21:20
@@ -29,6 +32,8 @@ public class T19 {
             right = right.next;
         }
         left.next = left.next.next;
+
+
         return dummy.next;
 
     }
