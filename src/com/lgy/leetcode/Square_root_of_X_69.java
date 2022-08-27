@@ -28,4 +28,10 @@ public class Square_root_of_X_69 {
         return r;
     }
 
+    public static void main(String[] args) {
+        Square_root_of_X_69 t = new Square_root_of_X_69();
+        int i = t.mySqrt(8);
+        System.out.println(i);
+    }
+
 }

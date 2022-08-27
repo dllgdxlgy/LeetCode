@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.locks.Lock;
 
 /**
  * @author LGY
@@ -88,6 +89,7 @@ public class T1_yuanfudao {
         if (n != 1){
             map.put(n,map.getOrDefault(n,0)+1);
         }
+
         return map;
     }
 

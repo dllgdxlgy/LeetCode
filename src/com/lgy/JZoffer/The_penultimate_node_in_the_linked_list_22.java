@@ -53,7 +53,28 @@ public class The_penultimate_node_in_the_linked_list_22 {
             node = node.next;
         }
 
-
         return head;
+    }
+
+    /**
+     * 三刷
+     * @param head
+     * @param k
+     * @return
+     */
+    public ListNode getKthFromEnd_2(ListNode head, int k) {
+
+        ListNode left_node = head;
+        ListNode right_node = head;
+        int res = 0;
+        while(res != k){
+            right_node = right_node.next;
+            res++;
+        }
+        while(right_node!=null){
+            left_node = left_node.next;
+            right_node = right_node.next;
+        }
+        return left_node;
     }
 }
