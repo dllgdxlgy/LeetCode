@@ -11,16 +11,17 @@ public class T206 {
 
     /**
      * 迭代
+     *
      * @param head
      * @return
      */
     public ListNode reverseList(ListNode head) {
-        if(head == null){
+        if (head == null) {
             return head;
         }
         ListNode pre = null;
         ListNode next = null;
-        while(head != null){
+        while (head != null) {
             next = head.next;
             head.next = pre;
             pre = head;
@@ -31,11 +32,12 @@ public class T206 {
 
     /**
      * 递归
+     *
      * @param head
      * @return
      */
     public ListNode reverseList_1(ListNode head) {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode root = reverseList_1(head.next);
@@ -44,5 +46,29 @@ public class T206 {
         return root;
     }
 
+
+    /**
+     * 第二遍——反转链表
+     *
+     * @param head
+     * @return
+     */
+    public ListNode reverseList_2(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+
+        ListNode pre = null;
+        ListNode end = head;
+
+        while (head != null) {
+            head = head.next;
+            end.next = pre;
+            pre = end;
+            end = head;
+
+        }
+        return pre;
+    }
 
 }
