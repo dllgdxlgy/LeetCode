@@ -42,6 +42,7 @@ public class T215 {
 
     /**
      * -------------------------解法二----快速排序-----------------------------
+     *
      * @param nums
      * @param k
      * @return
@@ -71,16 +72,16 @@ public class T215 {
     public int partition(int[] arr, int low, int high) {
         int left = low;
         int right = high;
-        int ran = left + random.nextInt(right-left+1);
-        swap_1(arr,left,ran);
+        int ran = left + random.nextInt(right - left + 1);
+        swap_1(arr, left, ran);
 
         int temp = arr[left];
-        while (left < right){
-            while (left < right && arr[right]>=temp){
+        while (left < right) {
+            while (left < right && arr[right] >= temp) {
                 right--;
             }
             arr[left] = arr[right];
-            while (left<right && arr[left] <=temp){
+            while (left < right && arr[left] <= temp) {
                 left++;
             }
             arr[right] = arr[left];
@@ -96,4 +97,53 @@ public class T215 {
     }
 
 
+    /**
+     * 第二遍———— 快速排序
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int findKthLargest_2(int[] nums, int k) {
+        int len = nums.length;
+        int index = len - k;
+
+        int left = 0;
+        int right = nums.length - 1;
+        while (true) {
+            int temp = partition2(nums, left, right);
+            if (temp == index) {
+                return nums[temp];
+            } else if (temp < index) {
+                left = temp + 1;
+            } else {
+                right = temp - 1;
+            }
+        }
+    }
+
+    public int partition2(int[] arr, int left, int right) {
+        int low = left;
+        int high = right;
+
+
+        int temp = arr[low];
+        while (low < high) {
+
+            while (low < high && arr[high] >= temp)
+                high--;
+            arr[low] = arr[high];
+            while (low < high && arr[low] <= temp)
+                low++;
+            arr[high] = arr[low];
+        }
+        arr[high] = temp;
+        return low;
+    }
+
+    public static void main(String[] args) {
+        T215 t215 = new T215();
+        int[] arr = new int[]{3,2,1,5,6,4};
+        int kthLargest_2 = t215.findKthLargest_2(arr, 2);
+    }
 }

@@ -113,7 +113,7 @@ class LRUCache_1 {
         int key;
         int value;
         Node prev,next;
-        public Node(){};
+        public Node(){}
         public Node(int key,int value){
             this.key = key;
             this.value = value;
