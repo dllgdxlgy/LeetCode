@@ -7,6 +7,29 @@ import java.util.HashMap;
  * 两数之和
  */
 public class T1 {
+
+
+    /**
+     * 推荐的做法
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSum_2(int[] nums, int target) {
+
+        int[] res = new int[2];
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int temp = target - nums[i];
+            if (map.containsKey(temp)){
+                res[0] = map.get(temp);
+                res[1] = i;
+                return res;
+            }
+            map.put(nums[i],i);
+        }
+        return res;
+    }
     // 不符合题意
     public int[] twoSum(int[] nums, int target) {
         int[] arr = new int[2];
@@ -46,20 +69,25 @@ public class T1 {
         return res;
     }
 
-    public int[] twoSum_2(int[] nums, int target) {
-
-        int[] res = new int[2];
+    /**
+     * 第二遍——两数之和
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSum_3(int[] nums, int target) {
         HashMap<Integer,Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int temp = target - nums[i];
-            if (map.containsKey(temp)){
-                res[0] = map.get(temp);
-                res[1] = i;
-                return res;
+        int len = nums.length;
+
+        for(int i = 0;i< len;i++){
+            int temp = target-nums[i];
+            if(map.containsKey(temp)){
+                return new int[]{map.get(temp),i};
             }
             map.put(nums[i],i);
         }
-        return res;
+        return null;
     }
+
 
 }
