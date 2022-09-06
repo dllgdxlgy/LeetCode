@@ -2,10 +2,7 @@ package com.lgy.CodeTop_100;
 
 import com.lgy.JZoffer.entity.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author LGY
@@ -42,6 +39,42 @@ public class T102 {
             list.clear();
         }
         return res;
+    }
 
+
+    /**
+     * 第二遍
+     *
+     * @param root
+     * @return
+     */
+//    List<List<Integer>> res = new ArrayList<>();
+//    List<Integer> list = new ArrayList<>();
+
+    public List<List<Integer>> levelOrder_2(TreeNode root) {
+        if(root == null){
+            return res;
+        }
+        Queue<TreeNode> queue = new ArrayDeque<>();
+
+        queue.add(root);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+
+            for(int i =0;i< size;i++){
+                TreeNode temp = queue.poll();
+                list.add(temp.val);
+                if(temp.left!= null){
+                    queue.add(temp.left);
+                }
+                if(temp.right != null){
+                    queue.add(temp.right);
+                }
+
+            }
+            res.add(new ArrayList<>(list));
+            list.clear();
+        }
+        return res;
     }
 }
