@@ -1,5 +1,6 @@
 package com.lgy.CodeTop_100;
 
+
 /**
  * @author LGY
  * @create 2022-07-13 20:09
@@ -50,9 +51,12 @@ public class T5 {
     }
 
     public static void main(String[] args) {
-        String s = "012345678";
-        String s1 = s.substring(2, 5);
-        System.out.println(s1);
+//        String s = "012345678";
+//        String s1 = s.substring(2, 5);
+//        System.out.println(s1);
+        String s = "cbbd";
+        T5 t5 = new T5();
+        String s1 = t5.longestPalindrome_2(s);
     }
 
 
@@ -97,4 +101,33 @@ public class T5 {
         return s.substring(begin, res_len + begin);
     }
 
+
+    /**
+     * 第二遍
+     */
+
+    int[] arr = new int[2];
+    public String longestPalindrome_2(String s) {
+
+        int len = s.length();
+        for(int i = 0;i < s.length();i++){
+            isParom(s,i,i);
+            isParom(s,i,i+1);
+        }
+        return s.substring(arr[0],arr[1]);
+    }
+    public void isParom(String s,int i,int j){
+        int len = s.length();
+        if(j >= len){
+            return;
+        }
+        while(i >= 0 && j < len && s.charAt(i) == s.charAt(j)){
+            i--;
+            j++;
+        }
+        if(j-(i+1) > arr[1]-arr[0]){
+            arr[0] = i+1;
+            arr[1] = j;
+        }
+    }
 }

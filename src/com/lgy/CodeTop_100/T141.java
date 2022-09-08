@@ -36,11 +36,13 @@ public class T141 {
         return false;
     }
 
+
+
     /**
      * 快慢指针
      *
      * 写完快慢指针，就可能会继续问，是不是可以继续优化，应该问是不是时间上的优化，如果是，
-     * 那就使用hashset 来做，应该就可以了。
+     * 那就使用 hashset 来做，应该就可以了。
      *
      * 推荐这种方法
      * @param head
@@ -80,7 +82,27 @@ public class T141 {
 
         }
         return false;
+    }
 
+
+    /**
+     * 第二遍
+     * @param head
+     * @return
+     */
+    public boolean hasCycle_3(ListNode head) {
+        HashSet<ListNode> set = new HashSet<>();
+
+        boolean isFlag = false;
+        while(head != null){
+            if(set.contains(head)){
+                isFlag = true;
+                break;
+            }
+            set.add(head);
+            head = head.next;
+        }
+        return isFlag;
     }
 
 }
