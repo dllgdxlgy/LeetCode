@@ -21,10 +21,10 @@ public class T1 {
         }
         scanner.close();
         ArrayList<long[]> arrayList = new ArrayList<>();
-        arrayList.add(new long[]{1,n});
+        arrayList.add(new long[]{1, n});
         int index = 0;
-        while (index < q){
-            n = num_black(n,arr,q);
+        while (index < q) {
+            n = num_black(n, arr, q);
             System.out.println(n);
             index++;
         }
@@ -35,14 +35,14 @@ public class T1 {
 //        }
     }
 
-    public static long num_black(long black_num,int[][] arr,int index){
-        if(index == 0){
-            return black_num-(arr[0][1]-arr[0][0])+1;
+    public static long num_black(long black_num, int[][] arr, int index) {
+        if (index == 0) {
+            return black_num - (arr[0][1] - arr[0][0]) + 1;
         }
-        if(arr[index][0] > arr[index-1][1]){
-            return black_num-(arr[index][1]-arr[index][0])+1;
-        }else {
-            return black_num + arr[index-1][1]-arr[index][0] + arr[index][1]-arr[index-1][1];
+        if (arr[index][0] > arr[index - 1][1]) {
+            return black_num - (arr[index][1] - arr[index][0]) + 1;
+        } else {
+            return black_num + arr[index - 1][1] - arr[index][0] + arr[index][1] - arr[index - 1][1];
         }
 
     }
