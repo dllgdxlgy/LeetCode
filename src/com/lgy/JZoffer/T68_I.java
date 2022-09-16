@@ -8,10 +8,18 @@ import com.lgy.JZoffer.entity.TreeNode;
  */
 public class T68_I {
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
 
+        if(root.val >= q.val && root.val <= p.val || root.val <= q.val && root.val >= p.val){
+            return root;
+        }
 
-        return null;
+        if(root.val >q.val && root.val>p.val){
+            return lowestCommonAncestor(root.left,p,q);
+        }else{
+            return lowestCommonAncestor(root.right,p,q);
+        }
+
 
     }
 }
