@@ -34,9 +34,9 @@ public class T56 {
             // 获取到list 最后一个元素,这里是引用
             int[] last = res.getLast(); // 已经加入对
             // 进行判断，不符合条件就加入到 res 中。
-            if (last[1] >= temp[0]){
-                last[1] = Math.max(last[1],temp[1]);
-            }else {
+            if (last[1] >= temp[0]) {
+                last[1] = Math.max(last[1], temp[1]);
+            } else {
                 res.add(temp);
             }
         }
@@ -45,7 +45,7 @@ public class T56 {
     }
 
     public static void main(String[] args) {
-        int[][] arr = new  int[][]{{2,3},{1,6},{4,7},{0,3}};
+        int[][] arr = new int[][]{{2, 3}, {1, 6}, {4, 7}, {0, 3}};
         Arrays.sort(arr, new Comparator<int[]>() {
             @Override
             public int compare(int[] a, int[] b) {
@@ -58,6 +58,7 @@ public class T56 {
 //        int[][] merge = t56.merge(arr);
 //        System.out.println(111);
     }
+
     public int[][] merge_1(int[][] intervals) {
 
         // 创建 一个 链表
@@ -82,9 +83,9 @@ public class T56 {
             // 获取到list 最后一个元素,这里是引用
             int[] last = res.getLast(); // 已经加入对
             // 进行判断，不符合条件就加入到 res 中。
-            if (last[1] >= temp[0]){
-                last[1] = Math.max(last[1],temp[1]);
-            }else {
+            if (last[1] >= temp[0]) {
+                last[1] = Math.max(last[1], temp[1]);
+            } else {
                 res.add(temp);
             }
         }
