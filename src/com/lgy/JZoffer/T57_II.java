@@ -12,8 +12,8 @@ public class T57_II {
 
     public List<List<Integer>> findContinuousSequence(int target) {
         int n = (target+1)/2;
-        List<int[]> lists = new ArrayList<>();
-        ArrayList<Integer> arr = new ArrayList<>();
+        List<List<Integer>> lists = new ArrayList<>();
+        List<Integer> arr = new ArrayList<>();
 
         for (int i = 1; i < n; i++) {
             int sum = 0;
@@ -24,7 +24,7 @@ public class T57_II {
                     continue;
                 }else if(sum == target){
                     Integer[] integers = arr.toArray(new Integer[arr.size()]);
-
+                    lists.add(new ArrayList<>(arr));
                     arr.clear();
                 }else {
                     arr.clear();
@@ -32,8 +32,7 @@ public class T57_II {
             }
         }
 
-        Integer[] integers = lists.toArray(new Integer[lists.size()]);
-        return null;
+        return lists;
     }
 
     public static void main(String[] args) {
@@ -42,5 +41,36 @@ public class T57_II {
         for (List<Integer> l: continuousSequence) {
             System.out.println(l.toString());
         }
+    }
+
+
+    /**
+     * leetcode 的题目，返回值不一样。
+     * @param target
+     * @return
+     */
+    public int[][] findContinuousSequence_2(int target) {
+
+        List<int[]> res = new ArrayList<>();
+        int i = 1,j=2,sum = 3;
+
+        while(i < j){
+            if(sum == target){
+                int[] arr = new int[j-i+1];
+                for(int k = i;k <= j;k++){
+                    arr[k-i] = k;
+                }
+                res.add(arr);
+            }
+            if(sum >= target){
+                sum-=i;
+                i++;
+            }else{
+                j++;
+                sum+=j;
+            }
+        }
+        return res.toArray(new int[0][]);
+
     }
 }

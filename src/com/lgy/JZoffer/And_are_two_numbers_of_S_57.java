@@ -1,5 +1,7 @@
 package com.lgy.JZoffer;
 
+import java.util.HashSet;
+
 /**
  * 和为s 的两个数字
  *
@@ -51,5 +53,27 @@ public class And_are_two_numbers_of_S_57 {
         }
 
         return new int[0];
+    }
+
+
+    /**
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSum_2(int[] nums, int target) {
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int i = 0;i < nums.length;i++){
+            int temp = target-nums[i];
+            if(set.contains(temp)){
+                return new int[]{nums[i],temp};
+            }else{
+                set.add(nums[i]);
+            }
+        }
+        return null;
     }
 }
