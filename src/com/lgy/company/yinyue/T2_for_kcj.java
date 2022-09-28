@@ -12,6 +12,7 @@ public class T2_for_kcj {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         HashSet<Integer> set = new HashSet<>();
         HashMap<Integer, Integer> map = new HashMap<>();
         int n = scanner.nextInt();
