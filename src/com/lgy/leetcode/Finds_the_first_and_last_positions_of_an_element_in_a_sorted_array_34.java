@@ -56,4 +56,47 @@ public class Finds_the_first_and_last_positions_of_an_element_in_a_sorted_array_
 
         return res;
     }
+
+
+    /**
+     * 二刷
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] searchRange_2(int[] nums, int target) {
+
+        int index = -1;
+
+        int left = 0;
+        int right = nums.length-1;
+
+        while(left <= right){
+            int temp = left + (right - left)/2;
+            if(nums[temp] == target){
+                index = temp;
+                break;
+            }else if(nums[temp] < target){
+                left = temp+1;
+            }else{
+                right = temp-1;
+            }
+        }
+
+        if(index == -1){
+            return new int[]{-1,-1};
+        }
+        left = index;
+        right = index;
+
+        while(left >= 0 && nums[left] == target){
+            left--;
+        }
+        left++;
+        while(right < nums.length && nums[right] == target){
+            right++;
+        }
+        right--;
+        return new int[]{left,right};
+    }
 }
