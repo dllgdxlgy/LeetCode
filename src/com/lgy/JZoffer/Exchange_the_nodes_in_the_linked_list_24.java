@@ -7,6 +7,33 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exchange_the_nodes_in_the_linked_list_24 {
+
+
+    /**
+     * 最简便的做法，自己做的。
+     * @param head
+     * @return
+     */
+    public ListNode swapPairs_2(ListNode head) {
+
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode start = dummy;
+        ListNode temp = head;
+
+        while(temp!=null && temp.next!=null){
+            temp = temp.next.next;
+            start.next = head.next;
+            head.next.next = head;
+            head.next = temp;
+            start = head;
+            head = temp;
+        }
+        return dummy.next;
+    }
+
+
+
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null){
             return head;
@@ -25,10 +52,7 @@ public class Exchange_the_nodes_in_the_linked_list_24 {
             node1.next = node2.next;
             node2.next =node1;
             temp = node1;
-
-
         }
-
 
         return pre.next;
     }

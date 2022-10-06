@@ -26,9 +26,6 @@ public class Reverse_linked_list_24 {
         }
         node.next = null;
 
-
-
-
         return listnode.next;
     }
 }

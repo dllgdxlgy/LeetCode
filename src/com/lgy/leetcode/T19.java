@@ -9,6 +9,34 @@ import java.util.List;
  */
 public class T19 {
 
+
+    /**
+     * 二刷
+     * @param head
+     * @param n
+     * @return
+     */
+    public ListNode removeNthFromEnd_1(ListNode head, int n) {
+        int index = 0;
+
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+        while(index!=n){
+            fast = fast.next;
+            index++;
+        }
+
+        while(fast.next != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+
+
     /**
      * T19. 删除链表的倒数第 N 个结点
      * @param head
