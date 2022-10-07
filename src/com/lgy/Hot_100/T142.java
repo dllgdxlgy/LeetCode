@@ -9,6 +9,23 @@ import java.util.Set;
  * @create 2022-02-22 23:58
  */
 public class T142 {
+
+
+    public ListNode detectCycle_3(ListNode head) {
+
+        HashSet<ListNode> set = new HashSet<>();
+
+        ListNode temp = head;
+        while(temp != null){
+            if(set.contains(temp)){
+                return temp;
+            }
+            set.add(temp);
+            temp = temp.next;
+        }
+        return null;
+
+    }
     public ListNode detectCycle(ListNode head) {
 
 
@@ -69,7 +86,37 @@ public class T142 {
      */
     public ListNode detectCycle_2(ListNode head) {
 
+        // HashSet<ListNode> set = new HashSet<>();
 
-        return null;
+        // ListNode temp = head;
+        // while(temp != null){
+        //     if(set.contains(temp)){
+        //         return temp;
+        //     }
+        //     set.add(temp);
+        //     temp = temp.next;
+        // }
+        // return null;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast ){
+                break;
+            }
+        }
+
+        if(fast == null || fast.next == null){
+            return null;
+        }
+        fast = head;
+        while(fast != slow){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return fast;
     }
 }
