@@ -20,14 +20,14 @@ public class T15 {
      * @param nums
      * @return
      */
-    public List<List<Integer>> threeSum_1(int[] nums) {
+    public List<List<Integer>> threeSum_2(int[] nums) {
 
         List<List<Integer>> res = new ArrayList<>();
 
         Arrays.sort(nums);
 
         for(int i = 0; i < nums.length; i++){
-            if(nums[i] > 0)break;;
+            if(nums[i] > 0)break;
 
             if(i > 0 && nums[i] == nums[i-1])continue;
 
@@ -99,7 +99,7 @@ public class T15 {
      * @param nums
      * @return
      */
-    public List<List<Integer>> threeSum_2(int[] nums) {
+    public List<List<Integer>> threeSum_1(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
 
         Arrays.sort(nums);
