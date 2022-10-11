@@ -38,7 +38,7 @@ public class Replace_spaces_5 {
      */
     public String replaceSpace2(String s) {
 
-        return s.replace(" ","20");
+        return s.replace(" ","%20");
     }
 
     /**
@@ -56,11 +56,17 @@ public class Replace_spaces_5 {
     }
 
     public static void main(String[] args) {
-        Replace_spaces_5 r = new Replace_spaces_5();
-        String s = "jiahf f f";
+//        Replace_spaces_5 r = new Replace_spaces_5();
+//        String s = "jiahf f f";
 //        StringBuilder builder = new StringBuilder(s);
 //        System.out.println(builder);
-        String s1 = r.replaceSpace(s);
+//        String s1 = r.replaceSpace(s);
+
+        String s = "We are   happy";
+        String[] split = s.trim().split(" ");
+        for (String s1: split) {
+            System.out.println(s1);
+        }
     }
 
     /**

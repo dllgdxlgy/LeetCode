@@ -79,4 +79,28 @@ public class T28 {
         }
         return -1;
     }
+
+
+    /**
+     *
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public int strStr_2(String haystack, String needle) {
+
+        if(haystack.length() < needle.length()){
+            return -1;
+        }
+        int l = needle.length();
+        int len = haystack.length() - needle.length();
+
+
+        for(int i = 0 ;i <= len; i++ ){
+            if(haystack.substring(i,i+l).equals(needle)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }
