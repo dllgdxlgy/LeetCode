@@ -35,6 +35,7 @@ public class T1 {
             if(addtemp < x){
                 continue;
             }else {
+
                 num += x;
             }
         }
