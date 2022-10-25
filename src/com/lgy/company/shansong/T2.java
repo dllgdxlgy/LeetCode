@@ -16,6 +16,7 @@ public class T2 {
         }
 
         for (int a: map.keySet()) {
+
             if(map.get(a) == 1){
                 return  a;
             }
