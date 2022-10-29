@@ -7,6 +7,33 @@ import java.util.Arrays;
 public class T209 {
 
     /**
+     * 简单滑动窗口
+     * @param target
+     * @param nums
+     * @return
+     */
+    public int minSubArrayLen_2(int target, int[] nums) {
+
+        int min_len = Integer.MAX_VALUE;
+
+        //滑动窗口
+        int left = 0;
+        int right = 0;
+        int len = nums.length;
+        int sum = 0;
+        while(right < len){
+            sum += nums[right];
+            right++;
+
+            while(sum >= target){
+                min_len = Math.min(right-left,min_len);
+                sum -= nums[left];
+                left++;
+            }
+        }
+        return min_len==Integer.MAX_VALUE?0:min_len;
+    }
+    /**
      * 二刷、滑动窗口
      *
      * @param target
