@@ -3,6 +3,7 @@ package com.lgy.company.safe360;
 import javax.xml.bind.SchemaOutputResolver;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * @author LGY
@@ -10,6 +11,7 @@ import java.util.Scanner;
  */
 public class T1 {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();
         int q = scanner.nextInt();
