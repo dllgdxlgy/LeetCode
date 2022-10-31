@@ -5,8 +5,16 @@ import java.util.*;
 public class Valid_parentheses_20 {
 
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public boolean isValid(String s) {
 
+        /**
+         * 条件判断
+         */
         if (s.length() % 2 == -1) {
             return false;
         }
