@@ -3,9 +3,11 @@ package com.lgy.company.Other;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class T1_for_kcj {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] arr = new int[n];
