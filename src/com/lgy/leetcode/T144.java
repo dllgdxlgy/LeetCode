@@ -84,5 +84,27 @@ public class T144 {
         return res;
     }
 
+    public List<Integer> preorderTraversal_3(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        List<Integer> res = new ArrayList<>();
+        if(root == null){
+            return res;
+        }
+        stack.push(root);
+
+        while (!stack.isEmpty()){
+            TreeNode temp = stack.pop();
+            res.add(temp.val);
+            if(temp.right!=null){
+                stack.push(temp.right);
+            }
+            if(temp.left!=null){
+                stack.push(temp.left);
+            }
+        }
+
+        return res;
+    }
+
 
 }
