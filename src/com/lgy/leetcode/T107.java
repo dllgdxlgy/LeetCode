@@ -25,7 +25,6 @@ public class T107 {
         }
         //注意这里 ArrayDeque 的写法
         Queue<TreeNode> queue = new ArrayDeque<>();
-
 //        add()和offer()区别:
 //        add()和offer()都是向队列中添加一个元素。一些队列有大小限制，
 //        因此如果想在一个满的队列中加入一个新项，调用 add() 方法就会抛出一个 unchecked 异常，
